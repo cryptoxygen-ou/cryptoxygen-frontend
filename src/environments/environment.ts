@@ -5,12 +5,11 @@
 
 export const environment = {
   production: false,
-  DIRPATH:'http://192.168.1.224:5000',
-  APIURL:'http://192.168.1.224:5000/api/v1/user',
-  APIURL_ETH:'http://192.168.1.224:5000/api/v1/eth',
-  FILEPATH : 'http://192.168.1.224:5000',
+  DIRPATH:'',
+  APIURL:'',
+  APIURL_ETH:'',
+  FILEPATH : '',
   CAPTCHA:{
-    // siteKey:'6Lcr9HYUAAAAAI2LGYuA5LApmuAnQdJV1EHjP62i'
-    siteKey:'6LfkqX4UAAAAAGdbf5sMDBjwMl3c5-qfFggtGAv0'
+    siteKey:''
   }
 };
