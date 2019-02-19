@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+sitemap: https://www.cryptoxygen.io/sitemap.xml
+Disallow: /https://www.cryptoxygen-stage.com/#/
+
+

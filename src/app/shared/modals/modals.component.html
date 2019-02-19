@@ -1,0 +1,237 @@
+
+
+<a *ngIf="!userservice.isLoggedIn()" (click)="openModal(myModal)" class="btn">{{text}}</a>
+<!-- <a class="btn" title="Coming soon">{{text}}</a> -->
+
+<ng-template #myModal>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-body">
+        <tabset (click)="removeKey()">
+          <tab heading="Login" id="tab1">
+            <div id="home" class="container tab-pane active">
+              <form #loginf="ngForm" (ngSubmit)="login(loginf)" >
+                <div class="form-group">
+                  <input class="form-control" type="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required [(ngModel)]="loginusername" name="useremail" #useremail = "ngModel" placeholder="Email" autocomplete="off" >
+
+                  <p class="text-danger" *ngIf="useremail.touched && !useremail.valid">
+                    <span *ngIf = "useremail.errors.required" >Email Is Required</span>
+                    <span *ngIf = "useremail.errors.pattern" >Enter a valid email format</span>
+                  </p>
+      
+                </div>
+                  <div class="form-group">
+                    <input minlength="5" class="form-control" type="password" required [(ngModel)]="loginpassword" name="userpass" #userpass = "ngModel" autocomplete="off" placeholder="Password">
+
+                    <p class="text-danger" *ngIf="userpass.touched && !userpass.valid">
+                      <span *ngIf = "userpass.errors.required" >Password Is Required</span> 
+                      <span *ngIf = "userpass.errors.minlength" >Minimum {{userpass.errors.minlength.requiredLength}} Chracters are required</span>
+                   </p>
+                  </div>
+                  <div class="form-check">
+                    <div class="term_chk">
+                        <label class="control_tm control-checkbox">
+                        <input type="checkbox" [(ngModel)]="rememberMebtn" name="remberMe" #remberMe = "ngModel"/>
+                        <span class="control_label_tm">Remember me</span> <span class="control_indicator_tm"></span> </label>
+                    </div>
+                    <a class="myanchor" (click)="forgotpassword(forgotModal)" >Forgot password?</a>
+                  </div>
+                  <div class="form-check" *ngIf="resendLink">
+                    <a class="myanchor" (click)="resendemail()" >Resend email for verification?</a>
+                  </div>
+                  <div   class="form-group">
+                    <div class="g-recaptcha" id="loginReCaptcha" data-sitekey="6LfkqX4UAAAAAGdbf5sMDBjwMl3c5-qfFggtGAv0"></div>
+                  </div>
+                  <div class="form-group">
+                   
+                  <button [disabled]="!loginf.valid || !loginsubmit" class="btn btn_blue">Login</button>                
+                </div>
+              </form>
+            </div>
+          </tab>
+          <tab id="tab2"  heading="Register">
+              <div id="menu1"  class="container tab-pane active">
+                  <form #f= "ngForm" (ngSubmit)="register(f)">
+                    <div class="form-group">
+                      <input 
+                      required 
+                      ngModel 
+                      minlength="2" 
+                      maxlength="50"
+                      name = "firstName"  
+                      #firstName ="ngModel" 
+                      type="text" 
+                      class="form-control" 
+                      placeholder="First Name*"
+                   
+                      >
+                      <p class="text-danger" *ngIf="firstName.touched && !firstName.valid">
+                        <span *ngIf = "firstName.errors.required" >First Name Is Required</span>
+                        <span *ngIf = "firstName.errors.minlength" >Minimum {{firstName.errors.minlength.requiredLength}}  chracter Is required</span>
+                    
+                      </p>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                        required 
+                        ngModel 
+                        minlength="2" 
+                        name = "lastName"  
+                        #lastName ="ngModel" 
+                        type="text" 
+                        class="form-control" 
+                        maxlength="50"
+                        placeholder="Last Name*"
+                        
+                        >
+                        <p class="text-danger" *ngIf="lastName.touched && !lastName.valid">
+                          <span *ngIf = "lastName.errors.required" >Last Name Is Required</span>
+                          <span *ngIf = "lastName.errors.minlength" >Minimum {{lastName.errors.minlength.requiredLength}}  chracter Is required</span>
+                        
+                        </p>
+                      </div>
+                    <div class="form-group">
+                      <input required ngModel name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email ="ngModel" type="email" class="form-control" placeholder="Email* ">
+                      <p class="text-danger" *ngIf="email.touched && !email.valid">
+                        <span *ngIf = "email.errors.required" >Email Is Required</span>
+                        <span *ngIf = "email.errors.pattern" >Enter a valid email format</span>
+                      </p>
+                    </div> 
+                    <div class="form-group">
+                        <input required ngModel minlength="5" maxlength="20" name = "password" #password ="ngModel" type="password" class="form-control" id="password" placeholder="Password*">
+                        <p class="text-danger" *ngIf="password.touched && !password.valid">
+                           <span *ngIf = "password.errors.required" >password Is Required</span> 
+                           <span *ngIf = "password.errors.minlength" >Minimum {{password.errors.minlength.requiredLength}}  chracter Is required</span>
+                        </p>
+                    </div>
+                    <div class="form-group">
+                        <input 
+                        required 
+                        ngModel 
+                        minlength="5" 
+                        maxlength="20" 
+                        name = "cpassword" 
+                        #cpassword ="ngModel" 
+                        type="password" 
+                        class="form-control" 
+                        id="cpassword" 
+                        placeholder="Confirm Password*"
+                        (keyup)="checkpassword(cpassword.value,password.value)"
+                        >
+                        <p 
+                           class="text-danger" 
+                           *ngIf="cpassword.touched && !cpassword.valid">
+                           <span *ngIf = "cpassword.errors.required" >Confirm password Is Required</span> 
+                           
+                        </p>
+                        <p  *ngIf="cmatched" class="text-danger"><span  >Password and Confirm password should match</span> </p>
+                    </div>
+
+                    <div class="form-group">
+                          <input pattern= "[0-9]+" required ngModel name = "phone"  #phone ="ngModel" type="text" class="form-control" placeholder="Mobile Number* ">
+                           <p class="text-danger" *ngIf="phone.touched && !phone.valid">
+                              <span *ngIf = "phone.errors.required" >Mobile Number is required</span> 
+                              <span *ngIf = "phone.errors.pattern" >Mobile Number should be numeric</span> 
+                          </p>
+                    </div>
+                      
+                    <div class="form-group">
+                        <!-- <input 
+                        required 
+                        ngModel 
+                        pattern= "[A-Za-z]+"
+                        name = "country"  
+                        #country ="ngModel" 
+                        type="text" 
+                        class="form-control" 
+                        placeholder="Country*"
+                        maxlength="50"
+                        > -->
+                        <select 
+                        class="form-control round_fld"
+                        required 
+                        ngModel 
+                        name = "country"  
+                        #country ="ngModel" 
+                        >
+                        <option value="">Select Country</option>
+                          <option [value]="clist.nicename" *ngFor="let clist of countryList;">{{clist.nicename}}</option>
+                        </select>
+                        <p class="text-danger" *ngIf="country.touched && !country.valid">
+                          <span *ngIf = "country.errors.required"> Country Is Required</span> 
+                          <span *ngIf = "country.errors.pattern">Only characters are allowed</span> 
+                        </p>
+                    </div>
+                        
+                      
+                            <div class="form-check">
+                              <div class="term_chk">
+                                 <label class="control_tm control_tm_full control-checkbox">
+                                 <input type="checkbox" ngModel name = "terms" #terms ="ngModel" required />
+                                 <span class="control_label_tm">I confirm that I have read, accepted and agreed to all   <a  target="_blank"  routerLink="/privacy-policy"> Privacy and Policy</a> ,<a target="_blank" routerLink="/terms-conditions">Terms and Conditions</a>, and I am of legal age.
+                                  </span> <span class="control_indicator_tm"></span> </label>
+                                  <p class="text-danger" *ngIf="terms.touched && !terms.valid">
+                                    <span *ngIf = "terms.errors.required" >Please confirm the terms and Conditions</span>
+                                  </p>
+                                  
+                              </div>
+                           </div> 
+                           <div class="form-group">
+                              <div class="g-recaptcha" id="registerReCaptcha" data-sitekey="6LfkqX4UAAAAAGdbf5sMDBjwMl3c5-qfFggtGAv0"></div>
+                          </div>
+                      <div class="form-group">
+                      <button [disabled] = "!f.valid || !signupSubmit || cmatched" type="submit" class="btn btn_blue">Register</button>
+                      </div>
+                   </form> 
+              </div>
+          </tab>            
+        </tabset>
+            
+          </div>
+  </ng-template> 
+
+
+
+  <ng-template #forgotModal>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-body">
+      <h4>Reset your password</h4>
+      <form #forgot= "ngForm" (ngSubmit)="forgotsubmit(forgot)" >
+         
+        <div class="form-group">
+            <input required ngModel name = "email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" #email ="ngModel" type="email" class="form-control" placeholder="Email ">
+                      <p class="text-danger" *ngIf="email.touched && !email.valid">
+                        <span *ngIf = "email.errors.required" >Email Is Required</span>
+                        <span *ngIf = "email.errors.pattern" >Enter a valid email format</span>
+                      </p>
+        </div>
+        <div class="form-group">
+        <button [disabled] = "!forgot.valid" type="submit" class="btn btn_blue">Get new password</button>
+        <p><a (click)="modalRef.hide()" href="#"  data-dismiss="modal">Cancel</a></p>
+        </div>
+     </form>   
+    </div>
+  </ng-template>
+<ng-template #faModal>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-body google_auth">
+        <h4>Google Authentication Code</h4>
+        <form #fa= "ngForm" (ngSubmit)="verify2fa(fa)" >
+            <div class="form-group">
+                <input required ngModel minlength="2" name ="token"  #token ="ngModel" type="text" class="form-control" placeholder="Verify Token">
+                <p class="text-danger" *ngIf="token.touched && !token.valid">
+                    <span *ngIf = "token.errors.required" >Token is required</span>
+                    <span *ngIf = "token.errors.minlength" >Minimum {{token.errors.minlength.requiredLength}}  chracter is required</span>
+                </p>
+            </div>
+            <div class="form-group">
+                <button [disabled]="!fa.valid" type="submit" class="btn btn_blue">Verify & Login</button>
+            </div>
+        </form>   
+    </div>
+</ng-template> 

@@ -1,0 +1,225 @@
+<p-growl [(value)]="msgs"></p-growl>
+<div>
+
+<!-- ETH COIN -->
+<div class="container-fluid nopadd">
+    <div class="container">
+        <div class="white_Bg">
+            <div class="customr">
+                <h2>KYC Detail</h2> 
+                <h5  *ngIf="userstatus == 1">(Your KYC has been approved.)</h5>
+                <h5 *ngIf="userstatus == 0">(Your KYC approval is pending.)</h5>
+                <h5 *ngIf="userstatus == 2">(Your KYC has been unapproved, Please re-submit all your documents.)</h5>
+                <div class="token_sec_in">
+                    <div class="col-md-12 mx-auto">
+                        <form #f= "ngForm" (ngSubmit)="submit(f)" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <div class="col-sm-6 inpt_flds">
+                                    <label for="firstname">First name*</label>
+                                    <input required [(ngModel)]="accountdata.f_name" minlength="2" name = "firstName"  #firstName ="ngModel" type="text" class="form-control" placeholder="First Name"
+                                    ngModel>
+                                    <p class="text-danger" *ngIf="firstName.touched && firstName.invalid">
+                                    <span *ngIf = "firstName.errors.required" >First Name Is Required</span>
+                                    <span *ngIf = "firstName.errors.minlength" >Minimum {{firstName.errors.minlength.requiredLength}}  chracter Is required</span>
+                                    </p>
+                                </div>
+                                        <div class="col-sm-6 inpt_flds">
+                                            <label for="l_name">Last name*</label>
+                                            <input 
+                                            required 
+                                            [(ngModel)]="accountdata.l_name" minlength="2" 
+                                            name = "lastName"  
+                                            #lastName ="ngModel" 
+                                            type="text" 
+                                            class="form-control" placeholder="Last Name"
+                                            ngModel
+                                            >
+                                            <p class="text-danger" *ngIf="lastName.touched && lastName.invalid">
+                                            <span *ngIf = "lastName.errors.required" >Last Name Is Required</span>
+                                            <span *ngIf = "lastName.errors.minlength" >Minimum {{lastName.errors.minlength.requiredLength}}  chracter Is required</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                            <div class="col-sm-6 inpt_flds">
+                                                    <label for="address">Address*</label>
+                                                    <input 
+                                                    required 
+                                                [(ngModel)]="accountdata.address"  name = "address"  
+                                                #address ="ngModel" 
+                                                type="text" 
+                                                class="form-control" placeholder="Address">
+                                                    <p class="text-danger" *ngIf="address.touched && address.invalid">
+                                                    <span *ngIf = "address.errors.required" >Address Is Required</span>
+                                                    </p>
+                                                </div>
+                                        <div class="col-sm-6 inpt_flds">
+                                            <label for="city">City*</label>
+                                            <input required [(ngModel)]="accountdata.city"  name = "city"  #city ="ngModel" type="text" class="form-control" placeholder="City">
+                                            <p class="text-danger" *ngIf="city.touched && city.invalid">
+                                            <span *ngIf = "city.errors.required" >City Is Required</span>
+                                            </p>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="form-group row">
+                                            <div class="col-sm-6 inpt_flds">
+                                                    <label for="state">State/Providence*</label>
+                                                    <input required [(ngModel)]="accountdata.state"  name = "state"  #state ="ngModel" type="text" class="form-control" placeholder="State">
+                                                    <p class="text-danger" *ngIf="state.touched && state.invalid">
+                                                    <span *ngIf = "state.errors.required" >State Is Required</span>
+                                                    </p>
+                                                </div>
+                                        <div class="col-sm-3 inpt_flds">
+                                            <label for="country">Country*</label>
+                                            <select 
+                                            name = "country"  
+                                            #country="ngModel"
+                                            class="form-control"
+                                            ngModel
+                                            required
+                                            (change)="getOption(country)"
+                                            [(ngModel)]="selectedCountry"
+                                            >
+                                        <option value="">Select Country</option>
+                    <option [value]="countryList.id" *ngFor="let countryList of countryArr;">{{countryList.nicename}}</option>
+                                            </select>
+                                            <!-- <input required [(ngModel)]="accountdata.country"  name = "country"  #country ="ngModel" type="text" class="form-control" placeholder="Country"> -->
+                                            <p class="text-danger" *ngIf="country.touched && country.invalid">
+                                            <span *ngIf = "country.errors.required" >Country Is Required</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-sm-3 inpt_flds">
+                                            <label for="zipcode">Zipcode*</label>
+                                        <input 
+                                        type="text" 
+                                        name = "zipcode" 
+                                        ngModel 
+                                        maxlength="15" 
+                                        [(ngModel)]="accountdata.zipcode"
+                                            #zipcode ="ngModel" 
+                                            required 
+                                            class="form-control" 
+                                            placeholder="Postal Code">
+        <p class="text-danger" *ngIf="zipcode.touched && zipcode.invalid">
+        <span *ngIf = "zipcode.errors.required" >Zipcode Is Required</span>
+        </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-md-6">                                        
+                                            <label for="phone">Contact Number*</label>
+                                            <div class="country_code_block">
+                                                <div class="left_block inpt_flds">
+                                                    
+                                                    <input class="form-control" type="text" 
+                                                    [value]="phoneCode" ngModel disabled="disabled"
+                                                    >
+                                                </div>
+
+                                            <div class="right_block">    
+                                                <input  
+                                                required 
+                                                maxlength="26" 
+                                                [(ngModel)]="accountdata.phone"  
+                                                name = "phone"  
+                                                #phone ="ngModel" 
+                                                type="text" class="form-control" placeholder="Contact Number"
+                                                pattern= "[0-9]+"
+                                                >
+                                                
+                                        
+                                            </div>
+                                            
+                                        </div> 
+                                        <p class="text-danger" *ngIf="phone.touched && phone.invalid">
+                                                <span *ngIf = "phone.errors.required" >Contact Number Is Required</span>
+                                                <span *ngIf = "phone.errors.pattern" >Contact number should be numeric</span>
+                                            </p>  
+                                    </div>
+                                        <div class="col-sm-6 inpt_flds">
+                                            <label for="doctype">Document Type*</label>
+                                            <!-- <input required [(ngModel)]="accountdata.document_type"  name = "doctype"  #doctype ="ngModel" type="text" class="form-control" placeholder="Document Type"> -->
+                                            <select 
+                                            name = "doctype"  
+                                            #doctype ="ngModel"
+                                            [(ngModel)]="accountdata.document_type" 
+                                            required
+                                            class="form-control"
+                                            >
+                                        <option value="Drivers License"> Driver License</option>
+                                        <option value="Government ID"> Government ID</option>
+                                        <option value="Passport"> Passport</option>
+                                        </select>
+                                            <p class="text-danger" *ngIf="doctype.touched && doctype.invalid">
+                                            <span *ngIf = "doctype.errors.required" >Document Type Is Required</span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 inpt_flds">
+                                            <label for="upload">{{(userstatus!=1) ? 'Upload' : 'Uploaded'}} Document* <i class="fa fa-info-circle" [popover]="popTemplate1" container="body" [outsideClick]="true" title="click here"></i></label>
+                                            <div class="upld_doc">  
+                                                <input required  name = "upload"  type="file" (change)="upload($event,'doc')" class="form-control" placeholder="Upload" *ngIf="userstatus!=1">
+                                            </div>                                            
+
+                                            <ng-template #popTemplate1>
+                                                <div [innerHtml]="html"></div>
+                                                <img src="../../../assets/images/1.png" alt="img" class="img-responsive">
+                                            </ng-template>
+
+                                            <span *ngIf="doc">
+                                                    <a *ngIf="isPdf(doc_img)" [attr.href]="doc_img" target="_blank" class="btn btn_blue" style="width:170px; font-size: 15px;padding: 13px 25px;">View document</a>
+                                                <img *ngIf="!isPdf(doc_img)" [src]="doc_img" width='200'>
+                                            </span>                                            
+                                        
+                                        </div>
+                                        <div class="col-sm-6 inpt_flds">
+                                            <label >{{(userstatus!=1) ? 'Upload' : 'Uploaded'}} selfie with document* 
+                                            <i class="fa fa-info-circle" [popover]="popTemplate2" container="body" [outsideClick]="true" title="click here"></i></label>
+                                            <div class="upld_doc">
+                                                <input required  name = "supload"  type="file" (change)="upload($event,'selfie')" class="form-control" *ngIf="userstatus!=1">
+                                            </div>
+
+                                            <ng-template #popTemplate2>
+                                                <div [innerHtml]="html"></div>
+                                                <img src="../../../assets/images/2.png" alt="img" class="img-responsive">
+                                            </ng-template>
+                                            <span *ngIf="selfie_exist">
+                                                <a *ngIf="isPdf(selfie_image)" [attr.href]="selfie_image" target="_blank" class="btn btn_blue" style="font-size: 15px;padding: 10px 20px;">View selfie with document</a>
+                                                <img *ngIf="!isPdf(selfie_image)" [src]="selfie_image" width='200'>
+                                            </span>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row" >
+                                        <div class="col-sm-12 inpt_flds">
+                                            <input  type="checkbox"  ngModel   #termsaccept="ngModel" name="termsaccept"  id="termsaccept" required />
+                                            <span>  I have read and agree to the <a style="color:#d8ba7a;" routerLink="/terms-conditions" target="_blank">Terms and Conditions</a> and 
+                                            <a style="color:#d8ba7a;"  routerLink="/privacy-policy" target="_blank">Privacy Policy</a>.</span>
+                                        </div>
+                                    </div>    
+                                    <!-- <div class="g-recaptcha" data-sitekey="{{CAPTCHA_KEY}}"></div> -->
+                                    <!-- *ngIf="userstatus == 0"  -->
+                                    <div class="form-group row">
+                                        <div class="col-sm-6 inpt_flds">
+                                            <ul class="kyc_btn_sec">
+                                                <li><button   [disabled] = "f.invalid"  type="submit" class="btn submitbutton px-4 ">Submit</button></li>
+                                                <li><button  routerLink="/dashboard"  class="btn cancelbutton px-4 ">Cancel</button></li>
+                                            </ul>
+                                        </div>
+                                    </div>                                    
+                                </form>
+                            </div>
+                        </div> 
+                        
+                    </div>
+                    
+                </div>
+                <!-- ETH COIN END -->
+                
+
+</div>
+    
+    

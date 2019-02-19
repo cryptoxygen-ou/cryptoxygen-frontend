@@ -1,0 +1,38 @@
+<a class="btn btn-buy" (click)="openModal(coinModal)"><span>Buy</span></a>
+
+
+
+
+
+
+<ng-template #coinModal>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    <div class="modal-body">
+        <div class="modal-header">
+          <h4>{{coin}}</h4>
+        </div>
+          <div class="inner_style">
+          <p>{{coin}} Address </p>
+          <p>Please make payment in the following wallet address.</p>          
+            <span class="myaddress" ></span>
+          
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span (click)="copyToClipboard()" ngxClipboard [cbContent]="textToCopy" class="input-group-text add_btn" id="basic-addon3">{{copytext}}</span>
+              </div>
+              <input type="text" class="form-control basic_url" [value]="address" id="basic-url" aria-describedby="basic-addon3">
+            
+            </div>
+            <div class="input-group mb-3 coin_result">
+              <input class="form-control" (keyup)="getvgwvalue($event)" style="width:100px" type="text" [placeholder]="coin">  <span class="eth_value">= {{totalcoin | number:'1.1-3'}} OXY2</span>
+             </div> 
+             <p>Minimum: {{mincoin}}</p> 
+             <p>Note: Minimum deposit is {{mincoin}} {{coin}}. Any amount less than that will not be considered. </p>         
+
+
+        </div>
+        
+  </div>
+</ng-template> 

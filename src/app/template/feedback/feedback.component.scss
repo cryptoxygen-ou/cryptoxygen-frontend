@@ -1,0 +1,46 @@
+.token_sec_in {
+    text-align: left;
+} 
+.feedback_sec{
+    margin: 0px auto;
+    .customr h2 {
+        font-size: 32px;
+        color: #6bafff;
+        font-weight: 600;
+        margin-bottom: 10px;
+        @media(max-width: 767px){
+            font-size: 22px;
+        }
+    }
+    textarea {
+        border-radius:10px;
+        border: 1px solid #ddd !important;
+        font-size: 15px;
+        -webkit-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+        box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+        -moz-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+        color: rgba(0,0,0,.6);
+    }
+}
+
+input[type="text"], select {
+    height: 50px !important;
+    border: 1px solid #ddd !important;
+    border-radius: 100px !important;
+    font-size: 15px;
+    -webkit-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+    box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+    -moz-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+    color: rgba(0,0,0,.6);
+    padding: 15px 22px;
+}
+input[type="file"] {
+	border: 1px solid #ddd !important;
+    border-radius: 100px !important;
+    font-size: 15px;
+    -webkit-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+    box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+    -moz-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+    color: rgba(0,0,0,.6);
+    padding: 12px 22px;
+}

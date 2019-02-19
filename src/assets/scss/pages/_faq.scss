@@ -1,0 +1,37 @@
+.banner_Sec{
+	background: #76d5f4 url(assets/images/banner_faq.jpg) top center no-repeat;
+	z-index: 4;
+	padding-top: 160px;
+	padding-bottom: 110px;
+	h2{
+		font-size: 35px;
+		color: #fff;
+		font-weight: 700;
+		margin-bottom: 0;
+	}
+}
+.faq_text_sec{
+	background: transparent;
+	padding:30px 0 50px 0;	
+	position: relative;
+	background: #fff;
+	@include breakpoint (small){
+		padding: 10px 0 20px 0;
+	}
+	h4{
+		font-size: 16px;
+		font-weight: 400;
+		color: #333333;
+		text-align: left;
+		margin-bottom: 14px;
+		margin-top: 25px;
+		font-family: 'Montserrat', sans-serif;
+	}
+	p{
+		font-size: 15px;
+		color: #999999;
+		font-weight: 400;
+		font-family: 'Montserrat', sans-serif;
+		line-height: 24px;
+	}
+}

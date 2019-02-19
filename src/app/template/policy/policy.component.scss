@@ -1,0 +1,128 @@
+@import '../../../assets/scss/main.scss';
+.bgWhite{
+    background: #fff;
+}
+.features {
+    background-color: #fff;
+    padding-bottom: 50px;
+
+    @include breakpoint(small){
+        padding-top: 25px;
+    }
+    p.mainText{
+        font-size: 17px;
+        color: #333333;
+        @include breakpoint(small){
+            font-size: 14px;
+        }
+    }
+    .features_sec_main {
+        .feature_sec {
+            padding-bottom: 20px;
+        }
+        .features_bgw_sec {
+            display: flex;
+            align-items: center;
+            @include breakpoint(x-small) {
+                flex-direction: column;
+            }            
+            .bgw_sec_heading {
+                margin-left: 20px;
+                color: #292e41;
+                h5 {
+                    font-size: 21px;
+                }
+                @include breakpoint(x-small) {
+                    margin-left: 0px;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+            }
+        }
+        .vwc_points {
+            .vwc_table {
+                padding-left: 88px;
+                @include breakpoint(x-small){
+                    padding-left: 0px;
+                }
+                table {
+                    font-size: 14px;
+                    tr{
+                        th{
+                            text-transform: uppercase;
+                            color: #292e41;
+                            font-weight: 500;
+                            font-size: 12px;
+                        }
+                        td{
+                            color: #626262;
+                        }
+                    }
+                }
+            }
+            .vwc_list {
+                padding-left: 88px;
+                list-style: none;
+                float: left;
+                width:100%;
+                @include breakpoint(x-small) {
+                    padding-left: 0px;
+                }
+               
+                .icon_img {
+                    background-image: url("../../../assets/images/icon.png");
+                    background-repeat: no-repeat;
+                    background-position: top 3px left;
+                    padding-left: 31px;
+                    @include image-2x('../../../assets/images/icon@2x.png',
+                    16px,
+                    16px);                    
+                    float: left;
+                    width:100%;
+                }
+            }
+            p {
+                font-size: 14px;
+                color: #626262;
+            }
+            .vwc_headline {
+                padding-left: 88px;
+                @include breakpoint(x-small) {
+                    padding-left: 0px;
+                }
+            }
+        }
+        .features_sec_subtxt {
+            padding: 30px 0px;
+            p {
+                color: #999999;
+                margin-bottom: 15px;
+                float: left;
+                width: 100%;
+                a {
+                    color: $red_heading;
+                }
+            }
+            & h5{
+                font-size: 17px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            @include breakpoint(x-small) {
+                padding: 0px;
+            }
+        }
+        .bsns_head_text {
+            padding: 20px 0px;
+           @include breakpoint(x-small) {
+                padding-top: 0;
+                padding-bottom: 25px;
+            }
+        }
+    }
+}
+.faq_que {
+    .ico_plan {
+        display: flex;
+    }
+}

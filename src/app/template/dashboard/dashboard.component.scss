@@ -1,0 +1,29 @@
+.ETH:first-child a
+{
+   background: #6bafff!important;	
+}
+
+.BTC:nth-child(2) a
+{
+   background: #6bafff!important;			
+}
+.LTC:nth-child(3) a
+{
+   background: #6bafff!important;			
+}
+
+.token_sec {
+	width: calc(100% - 450px) !important;
+    float: left;    
+}
+.token_sec {
+    ul {
+        li {
+            &.disabled_fld  {
+                .btn {
+                    background-color: #999;
+                }
+            }
+        }
+    }
+}

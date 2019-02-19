@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import "assets/css/bootstrap.min.css";
+@import "assets/css/checkbox.css";
+@import 'assets/scss/main.scss';
+@import "~primeng/resources/themes/omega/theme.css";
+@import "~primeng/resources/primeng.min.css";
+@import "~animate.css/animate.css";
+
+
+p-growl {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+}
+
+
+
+@media (max-width:575px) {
+    .g-recaptcha {
+        transform:scale(0.77);
+        -webkit-transform:scale(0.77);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+}
+
+
+.widget .container {
+	width: 100% !important;
+	text-align: left;
+	transform: scale(.75);
+	transform-origin: 50% 0;
+}
+
+.loadingDiv {
+	background-color: #000 !important;
+	opacity: 0.9 !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+}
+
+.loadingDiv{
+    position:fixed;
+    top:0px;
+    right:0px;
+    width:100%;
+    height:100%;
+    background-color:#666;
+    background-repeat:no-repeat;
+    background-position:center;
+    z-index:10000000;
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+  }
+
+@keyframes ui-progress-spinner-color {
+    100%,
+    0% {
+        stroke: #6bafff;
+    }
+    40% {
+        stroke: #6bafff;
+    }
+    66% {
+        stroke: #6bafff;
+    }
+    80%,
+    90% {
+        stroke: #6bafff;
+    }
+}
+
+
+.hide-overflow{
+    overflow: hidden;
+}
+
+.member_modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    max-width: 800px;
+    display: table;
+    margin-bottom: 30px;
+    .modal-content {
+        padding: 20px;
+        border-radius: 10px;
+        width: 100%;
+        .modal-header {
+            border-bottom: none;
+        }
+        .modal-body {
+            text-align: center;
+            img {
+                border-radius: 20px;
+            }
+            h4 {
+                color: #6bafff;
+            }
+            p{
+                color: #4a4a4a;
+
+            }
+        }
+    }
+
+}
+
+

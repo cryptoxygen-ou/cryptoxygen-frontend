@@ -1,0 +1,131 @@
+footer{
+	background: #2c2c2c;
+	padding: 19px 0;
+	float: left;	
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	
+	.copyright{
+		text-align: left;	
+		padding-top: 7px;
+		@include breakpoint (small){
+			text-align: center;
+		}
+		p{
+			font-size: 15px;
+			color: rgba(255, 255, 255, 0.5);
+			margin-bottom: 0;
+			a {
+				transition: all ease 0.5s;
+				&:hover, &:focus, &:active {
+					transition: all ease 0.5s;
+					color: $red_heading !important;
+				}
+			}
+		}
+}
+ul.social {
+	float: right;
+	width: auto;
+	padding: 0px;
+	margin:0px;
+	@include breakpoint (small){
+		margin: 0 auto;
+		width: 100%;
+		float: none;
+		padding-top: 10px;
+		text-align: center;
+	}
+	li {
+		display: block;
+		float: left;
+		margin-right: 7px;
+		width: auto;
+		margin-bottom: -7px;
+		@include breakpoint (small){
+			float: none;
+			display: inline-block;
+		}
+		&:last-child{
+			margin-right: 0;	
+		}
+		a {
+			display: inline-block;
+			overflow: hidden;
+			padding: 2px;
+			position: relative;
+			width: auto;
+			opacity: 0.8;
+			&:hover, &:active {
+				background:none;
+			}
+			&.hvr-fade {
+				width: 30px;
+				height: 30px;
+				border-radius: 100px;
+				background-color: rgba(255, 255, 255, 0.5);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: #fff;
+				text-decoration: none;
+				&:hover, &:active, &:focus {
+					background-color: rgba(255, 255, 255, 1);
+					.fa-facebook {
+						color: #3B5998;
+					}
+					.fa-quora {
+						color: #bb1401;
+					}
+					.fa-telegram {
+						color: #7aa5da;
+					}
+					.fa-twitter {
+						color: #55ACEE;
+					}
+					.fa-reddit {
+						color: #ff4500;
+					}
+					.fa-medium {
+						color: #00ab6b;
+					}
+				}
+			}
+
+			.icon {
+				background-color: rgba(0, 0, 0, 0);
+				background-image: url('assets/images/social_icon.png');
+				background-position: 0 0;
+				background-repeat: no-repeat;
+				background-size: auto;
+				display: block;
+				height: 30px;
+				width: 29px;
+			
+				&.icon-facebook {
+					background-position: 0px 0;
+				}
+				&.icon-twitter {
+					background-position: -36px 0;			    	
+				}
+				&.icon-telegram {
+					background-position: -74px 0;				    	
+				}
+				&.icon-reddit {
+					background-position: -110px 0;				    	
+				}
+			}
+
+			&:hover, &:active {
+					color: #212121;
+					opacity: 1;	
+				&:after {
+					right: 0;
+				}
+			}
+		}
+	}
+}
+}

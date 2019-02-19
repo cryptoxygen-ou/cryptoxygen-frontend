@@ -1,0 +1,55 @@
+<div class="loadingDiv" *ngIf="loading">
+  <p-progressSpinner></p-progressSpinner>
+</div>
+<p-growl [(value)]="msgs"></p-growl>
+
+<div class="container-fulid banner-inner">    
+  <div id="wave_div"></div>
+  <h2>Contact Us</h2> 
+</div>
+<div class="container-fluid faq_text_sec container faq">
+  <div class="container">
+    <div class="contact_form">
+        <form #f= "ngForm" (ngSubmit)="submit(f)" >
+          <div class="form-group">
+            <label for="nameword">Name</label>
+            <input type="text" minlength="2" maxlength="200" required ngModel name = "name"  #name ="ngModel" id="nameword" class="form-control" >    
+            <p class="text-danger" *ngIf="name.touched && !name.valid">
+                <span *ngIf = "name.errors.required" >Name is required</span> 
+                <span *ngIf = "name.errors.minlength" >Minimum {{name.errors.minlength.requiredLength}}  chracter Is required</span>
+             </p>
+          </div>
+          <div class="form-group">
+            <label for="confirmnameword">Email</label>
+            <input type="email" minlength="5" maxlength="100" required ngModel name = "email"  #email ="ngModel" class="form-control" id="confirmnameword">
+            <p class="text-danger" *ngIf="email.touched && !email.valid">
+      
+                <span *ngIf = "email.errors.required" >Email is required</span> 
+                <span *ngIf = "email.errors.minlength" >Minimum {{email.errors.minlength.requiredLength}}  chracter Is required</span>
+             </p>
+          </div>
+          <div class="form-group">
+            <label for="confirmnameword">Subject</label>
+            <input type="text" minlength="5" maxlength="200" required ngModel name = "subject"  #subject ="ngModel" class="form-control" >
+            <p class="text-danger" *ngIf="subject.touched && !subject.valid">
+      
+                <span *ngIf = "subject.errors.required" >Subject is required</span> 
+                <span *ngIf = "subject.errors.minlength" >Minimum {{subject.errors.minlength.requiredLength}}  chracter Is required</span>
+             </p>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmnameword">Message</label>
+            <textarea  minlength="5" maxlength="400" required ngModel name = "message"  #message ="ngModel" class="form-control" rows="5"></textarea>
+            <p class="text-danger" *ngIf="message.touched && !message.valid">
+                <span *ngIf = "message.errors.required" >Message is required</span> 
+                <span *ngIf = "message.errors.minlength" >Minimum {{message.errors.minlength.requiredLength}}  chracter Is required</span>
+             </p>
+          </div>
+
+            <input type="submit" [disabled] = "!f.valid" class="btn btn-primary" value="Submit" >
+        </form>
+    </div> 
+
+  </div>
+</div>

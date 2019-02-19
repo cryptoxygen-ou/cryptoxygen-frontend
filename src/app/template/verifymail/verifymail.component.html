@@ -1,0 +1,46 @@
+<p-growl [(value)]="msgs"></p-growl>
+<div class="container-fulid banner-inner" style="background: url(./assets/images/banner.png)">
+    <h2>Email Verification</h2>
+</div>
+<div class="container-fluid faq_text_sec container faq">
+    <div class="container">
+      <div class="col-md-5">
+         {{statusText}}
+      </div> 
+      <div class="col-md-4" *ngIf="status!=true">
+         <button (click)="openPop(verifyModal)" class="btn btn-danger" style="color:#fff; background-color: #F6101A;">Resend Verification Email</button>
+      </div>
+
+    </div>
+</div>
+<ng-template #verifyModal>
+        <p-growl [(value)]="msgs"></p-growl>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="modal-body">
+        <h4>Verfication Email</h4>
+        <form #forgot= "ngForm" (ngSubmit)="resendemail(forgot)" >
+           
+          <div class="form-group">
+              <input 
+              required 
+              ngModel 
+              name = "email" 
+              pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+              #email ="ngModel" 
+              type="email" 
+              class="form-control" 
+              placeholder="Email ">
+                        <p class="text-danger" *ngIf="email.touched && !email.valid">
+                          <span *ngIf = "email.errors.required" >Email Is Required</span>
+                          <span *ngIf = "email.errors.pattern" >Enter a valid email format</span>
+                        </p>
+          </div>
+          <div class="form-group">
+          <button [disabled] = "!forgot.valid" type="submit" class="btn btn_blue">Send Email</button>
+     
+          </div>
+       </form>   
+      </div>
+    </ng-template>

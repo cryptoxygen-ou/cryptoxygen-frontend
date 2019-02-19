@@ -1,0 +1,85 @@
+.control_tm {
+    display: block;
+    float: left;    
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 3px;
+    padding-top: 0px;
+    cursor: pointer;
+    font-weight: 400;
+    width: 100%;
+    color: #6a6a6a;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 20px;
+}
+.control_tm input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+ }
+.control_indicator_tm {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 22px;
+    width: 22px;
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #bdbdb7;
+    
+}
+.control-radio .control_indicator_tm {
+    border-radius: 50%;
+}
+
+.control_tm:hover input ~ .control_indicator_tm,
+.control_tm input:focus ~ .control_indicator_tm {
+    background: #fff;
+}
+
+.control_tm input:checked ~ .control_indicator_tm {
+    background: #fff;
+    border-color: #6bafff;
+}
+.control_tm input:checked ~  .control_label_tm{
+    color:#222f52;
+}
+.control_tm:hover input:not([disabled]):checked ~ .control_indicator_tm,
+.control_tm input:checked:focus ~ .control_indicator_tm {
+    background: #fff;
+}
+.control_tm input:disabled ~ .control_indicator_tm {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+.control_indicator_tm:after {
+    box-sizing: unset;
+    content: '';
+    position: absolute;
+    display: none;
+}
+.control_tm input:checked ~ .control_indicator_tm:after {
+    display: block;
+}
+.control-checkbox .control_indicator_tm:after {
+    left: 7px;
+    top: 1px;
+    width: 5px;
+    height: 12px;
+    top:1px\9;
+    width: 6px\9;
+    height: 10px\9;
+    border: solid #6bafff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.control-checkbox input:disabled ~ .control_indicator_tm:after {
+    border-color: #7b7b7b;
+}
+@media (max-width: 800px) {
+    .control_indicator_tm {
+        right:35px;
+    }
+}

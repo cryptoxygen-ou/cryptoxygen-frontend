@@ -1,0 +1,114 @@
+@import '../../../assets/scss/main.scss';
+.bgWhite{
+    background: #fff;
+}
+.faq{
+    padding-bottom: 50px;
+    .ico_points {
+        margin-bottom: 20px;
+        p {
+            margin-bottom: 5px;
+        }
+    }
+    ul{
+        margin-bottom: 25px;
+        li{
+            strong{
+                max-width: 292px;
+                width:100%;
+                font-size: 15px;
+                color: #999999;
+                font-weight: 600;
+                display: inline-block;
+            }
+            span{
+                color: #999999;
+                font-size: 15px;
+            }
+        }
+    }
+    h2{
+        font-size: 30px;
+        color: #282828;
+        font-weight: 700;
+        margin-top: 50px;
+        margin-bottom: 14px;
+        display: block;
+    }
+    h3{
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 400;
+        display: block;
+    }
+    p{
+        font-size: 15px;
+        color: #999999;
+        margin-bottom: 20px;
+        a {
+            color: #6bafff;
+            &:hover{
+                color: #6bafff;
+                @include transform(all ease 0.7);
+            }
+        }
+    }
+    h4{
+        padding: 15px 0px;
+        font-weight: 500;
+    }
+    h5{
+        font-size: 17px;
+    }
+  
+}
+
+.contact_form {
+    padding: 0px 15px;
+    form {
+        max-width: 600px;
+        margin: 0px auto;
+        float: none;   
+        .form-group {
+            margin-bottom: 15px;
+            float: left;
+            width: 100%;
+            label {
+                margin-bottom: 10px;
+                float: left;
+                width: 100%;
+            }
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }     
+        textarea {
+            border-radius:10px;
+            border: 1px solid #ddd !important;
+            font-size: 15px;
+            padding:15px;
+            -webkit-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+            box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+            -moz-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+            color: rgba(0,0,0,.6);
+        }        
+        input {
+            height: 50px !important;
+            border: 1px solid #ddd !important;
+            border-radius: 100px !important;
+            font-size: 15px;
+            -webkit-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+            box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+            -moz-box-shadow: 0 0 8px 0 rgba(2,3,3,.10);
+            color: rgba(0,0,0,.6);
+            padding: 15px 22px;
+            &.btn {
+                color: #fff;
+                border-color: #6bafff !important;
+                padding: 12px 30px !important;
+                height: auto !important;
+            }
+        }
+    }
+}

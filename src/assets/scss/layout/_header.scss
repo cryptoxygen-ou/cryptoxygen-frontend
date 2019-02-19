@@ -1,0 +1,266 @@
+header{
+	background: transparent;
+	position: absolute !important;
+	width: 100%;
+	top:0px;
+	z-index: 8;
+	padding: 18px 30px;
+	@include breakpoint(small){
+		padding: 10px 20px;
+	}
+	&.headerdash{
+		position: relative !important;
+		@include breakpoint(x-small){
+			padding: 18px 16px;
+		}
+	}
+	.navbar{
+		padding: 0;
+		background: transparent;
+		.navbar-collapse{
+			flex-direction: row;
+			@include breakpoint(medium) {
+				position: absolute;
+				right: 0;
+				top: 100%;
+				max-width: 200px;
+				width: 100%;
+				&::before {
+					position: absolute;					
+					content: '';
+					top: -11px;
+					right: 18px;
+					border-bottom: solid 10px rgba(255, 255, 255, .5);
+					border-left: solid 10px transparent;
+					border-right: solid 10px transparent;				
+				}
+			}
+			ul{
+				float: right;
+				&.nav_main {
+					@include breakpoint (medium){
+						width: 100%;
+						float: left;
+					}
+				}
+				li{
+					padding:0 0 0 10px;
+					display: flex;
+					justify-content: center;
+					@include breakpoint (large){
+						padding:0px;
+					}
+					@include breakpoint (medium){
+						padding:10px;
+					}
+					@include breakpoint (small){
+						padding:0px;
+					}
+					@media (max-width:991px){
+						border-bottom: solid #6f6f6f 1px !important;
+						padding: 0px;
+						&:hover, &:focus, &:active{
+							background-color:  rgba(255, 255, 255, 1)!important;
+						}
+						&.btn_li {
+							background-color: transparent !important;
+							padding: 10px !important;
+						}
+						&:nth-last-child(2) {
+							border: none;
+						}
+						&:last-child {
+							padding: 10px;
+							text-align: center;
+							border: none !important;
+							@media (max-width:991px) {
+								padding: 0px;
+							}
+							.btn {
+								margin: 0px;
+							}
+						}
+						
+					}
+					a{
+						font-size: 15px;
+						color: #999999;
+						border: 0px;
+						padding: 6px 15px;
+						text-decoration: none;
+						// float: left;	
+						width: 100%;
+						display: inline-block;
+						@include border-radius (25px);	
+						// @include breakpoint (xxlarge){
+						// 	padding: 6px 10px;
+						// }
+						// @include breakpoint (large){
+						// 	padding: 0px;
+						// 	margin: 5px !important;
+						// }
+						@include breakpoint (medium){
+							float: right;
+							text-align: center;
+							margin: 0px;
+							// padding-right: 0;
+						}
+						&:hover, &.active{
+							color: #6bafff;
+						}
+						&.btn{
+							color: #fff;
+							border: 0px;
+							background: #6bafff;
+							padding: 8px 30px;
+							max-width: 200px;
+							@include border-radius (100px);
+							justify-content: center;
+							// @include breakpoint (xxlarge){
+							// 	padding: 8px 20px;
+							// }	
+							// @include breakpoint (large){
+							// 	padding: 10px 20px;
+							// }	
+							@include breakpoint (medium){
+								margin-right: 0px;
+							}
+							&.btn_blue{
+								background: #6bafff;
+								color: #fff;
+								justify-content: center;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.for_desk{
+	display: block;
+	float: left;
+	width: 100%;
+	@include breakpoint (small){
+		display: none;
+	}
+}
+.for_mobile{
+	display: none;
+	@include breakpoint  (small){
+		display: block;
+		float: left;
+		width: 100%;
+	}
+}
+
+@include breakpoint (medium){
+	.navbar-collapse{
+		background: #333 !important;
+		border: solid 1px #6f6f6f !important;
+		box-shadow: 0px 0px 6px rgba(0,0,0,0.2);
+		ul{
+			li{
+				a{
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+	.navbar-toggler{
+		background: #6bafff;
+		margin-top: 20px;
+		right: 0;
+	@include breakpoint(small){
+		margin-top: 14px !important;
+	}
+	}
+}
+.bootstrap-select{
+	.btn{
+		background: transparent;
+		padding-top: 10px;
+		text-transform: uppercase;
+		color: #999999;
+		font-size: 13px;
+		padding-left: 22px;
+		padding-right: 22px;
+		.flag-icon{
+			@include border-radius(50%);
+		}
+		&:after{
+			margin-top: 5px;	
+			border-top: 7px solid;
+			border-right: 6px solid transparent;
+			border-left: 6px solid transparent;
+		}
+	}
+	ul.dropdown-menu{
+	    li{
+			float: left;
+			width: 100%;
+			padding: 0 6px;
+			a{
+				text-decoration: none;
+			}
+		}
+	}
+}
+.rightMenu{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: 28px;
+	padding-left: 25px;
+	width: auto;
+	position: relative;
+	@include breakpoint (medium){
+		margin-left: 0px;		
+		padding-right: 13px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	&:before{
+		width: 14px;
+		height: 18px;
+		content: "";
+		position: absolute;
+		top:50%;
+		@include transform (translateY(-50%));	
+		left: 0;
+		background: url('assets/images/top_icon.png') no-repeat;
+		background-size: 100%;
+	}
+		a{
+			border: 0px;
+			text-decoration: none;
+			padding: 0;
+			float: left;
+			line-height: 16px;
+			color: #7c7c7c;
+			font-weight: 400;
+			text-align: left;
+			font-size: 12px;
+			padding-right: 25px;
+			strong{
+				font-weight: 700;
+				font-size: 13px;
+				color: #fff;
+				display: block;
+			}
+		
+		&:after{
+			position: absolute;
+			right: 0;
+			border-top: 7px solid #6bafff;
+			border-right: 6px solid transparent;
+			border-left: 6px solid transparent;
+			margin-top: -15px;
+			margin-left: 15px;
+		}
+	}
+	.dropdown-menu{
+		top:50px;
+		left: auto;
+		right: 0;
+	}
+}

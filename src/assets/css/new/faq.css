@@ -1,0 +1,443 @@
+/* border-radius */
+/* border-bottom-radius */
+/* border-top-radius */
+/* border-top-radius */
+/* Placeholder */
+/* @include placeholder {
+    font-style:italic;
+    color: white;p
+    font-weight:100;
+} */
+/* Box Sizing */
+/* box-shadow */
+/* breakpoints */
+/* Retina */
+/* transition */
+/* ===== transformation ===== */
+/* rotate */
+/* scale */
+/* translate */
+/* skew */
+/* transform origin */
+/* ===== transformation Ends ===== */
+/* ===== Linear Gradients ===== */
+/* ===== Linear Gradients Ends ===== */
+/* Fonts*/
+/* color */
+/* line 1, ../scss/base/_base.scss */
+body {
+  background: #f7f7f7;
+  margin: 0px;
+  padding: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+/* line 8, ../scss/base/_base.scss */
+h1, h2, h3, h4, h5, h6, p, a {
+  font-weight: 400;
+}
+
+/* line 11, ../scss/base/_base.scss */
+:focus {
+  outline: none;
+}
+
+/* line 14, ../scss/base/_base.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 17, ../scss/base/_base.scss */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* line 26, ../scss/base/_base.scss */
+.form-control {
+  background: transparent;
+}
+
+/* line 29, ../scss/base/_base.scss */
+.container {
+  max-width: 1170px;
+  width: 100%;
+}
+
+/* line 33, ../scss/base/_base.scss */
+textarea {
+  resize: none;
+}
+
+/* line 36, ../scss/base/_base.scss */
+.btn {
+  padding: 13px 35px;
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 400;
+  color: #040405;
+  font-family: 'Montserrat', sans-serif;
+  background: #6bafff;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  /* 1110 px*/
+}
+@media (max-width: 1110px) {
+  /* line 36, ../scss/base/_base.scss */
+  .btn {
+    padding: 13px 24px;
+  }
+}
+
+/* line 1, ../scss/base/_component.scss */
+.signup_model {
+  background: rgba(213, 213, 213, 0.83);
+}
+/* line 4, ../scss/base/_component.scss */
+.signup_model.forget_model {
+  max-width: 422px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  margin: 0px auto;
+  z-index: 5;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 4, ../scss/base/_component.scss */
+  .signup_model.forget_model{
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: relative;
+    transform: none !important;
+    top: 50px !important;
+  }
+}
+/* line 20, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body {
+  padding: 25px !important;
+}
+/* line 22, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body h4 {
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #333333;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+/* line 29, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body .form-group {
+  margin-bottom: 0px;
+}
+/* line 31, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body .form-group input {
+  height: 49px;
+  border: 1px solid #acada5;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  padding: 15px 22px;
+  color: #6a6a6a;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  margin-bottom: 21px;
+}
+/* line 43, ../scss/base/_mixins.scss */
+.signup_model.forget_model .modal-body .form-group input::-webkit-input-placeholder {
+  color: #6a6a6a;
+}
+/* line 44, ../scss/base/_mixins.scss */
+.signup_model.forget_model .modal-body .form-group input::-moz-placeholder {
+  color: #6a6a6a;
+}
+/* line 45, ../scss/base/_mixins.scss */
+.signup_model.forget_model .modal-body .form-group input::-moz-placeholder {
+  color: #6a6a6a;
+}
+/* line 46, ../scss/base/_mixins.scss */
+.signup_model.forget_model .modal-body .form-group input::-ms-input-placeholder {
+  color: #6a6a6a;
+}
+/* line 44, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body .form-group .btn {
+  width: 100%;
+  background: #6bafff;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+/* line 53, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body .form-group p {
+  text-align: center;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+/* line 57, ../scss/base/_component.scss */
+.signup_model.forget_model .modal-body .form-group p a {
+  font-size: 14px;
+  color: #f34b39;
+  text-decoration: none;
+}
+/* line 67, ../scss/base/_component.scss */
+.signup_model .close {
+  width: 18px;
+  height: 18px;
+  background: url(../images/popup_close.png) no-repeat;
+  background-size: 100%;
+  opacity: 1;
+  position: absolute;
+  z-index: 5666;
+  right: 50px;
+  top: 50px;
+  /* 767 px*/
+}
+/* line 77, ../scss/base/_component.scss */
+.signup_model .close:hover {
+  background-position: bottom left;
+}
+@media (max-width: 767px) {
+  /* line 67, ../scss/base/_component.scss */
+  .signup_model .close {
+    top: 20px;
+    right: 20px;
+  }
+}
+/* line 85, ../scss/base/_component.scss */
+.signup_model .modal-dialog {
+  width: 100%;
+  max-width: 422px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) !important;
+  margin: 0px auto;
+  z-index: 3;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 85, ../scss/base/_component.scss */
+  .signup_model .modal-dialog {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    position: relative;
+    transform: none !important;
+    top: 50px !important;
+  }
+}
+/* line 102, ../scss/base/_component.scss */
+.signup_model .modal-content {
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+  border: 0px solid #d7d7d7;
+  padding: 0px;
+}
+/* line 106, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body {
+  padding: 0px;
+}
+/* line 108, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body h4 {
+  font-size: 17px;
+  color: #000;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+/* line 115, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .nav-pills li {
+  width: 50%;
+}
+/* line 117, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .nav-pills li a {
+  -webkit-border-radius: 8px 0 0 0px;
+  -moz-border-radius: 8px 0 0 0px;
+  -ms-border-radius: 8px 0 0 0px;
+  border-radius: 8px 0 0 0px;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  padding: 15px 0;
+}
+/* line 124, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .nav-pills li a.signup {
+  -webkit-border-radius: 0 8px 0 0px;
+  -moz-border-radius: 0 8px 0 0px;
+  -ms-border-radius: 0 8px 0 0px;
+  border-radius: 0 8px 0 0px;
+}
+/* line 127, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .nav-pills li a.active {
+  color: #333333;
+  background: #f4f4f4;
+  -webkit-box-shadow: 0px 0px 17px 0px rgba(2, 3, 3, 0.12) inset;
+  box-shadow: 0px 0px 17px 0px rgba(2, 3, 3, 0.12) inset;
+  -moz-box-shadow: 0px 0px 17px 0px rgba(2, 3, 3, 0.12) inset;
+}
+/* line 135, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content {
+  padding: 33px 25px;
+  float: left;
+  width: 100%;
+}
+/* line 137, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check {
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+/* line 142, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check .term_chk .control_tm {
+  width: 50%;
+  margin-top: 4px;
+  padding-left: 20px;
+}
+/* line 146, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check .term_chk .control_tm.control_tm_full {
+  width: 100%;
+}
+/* line 149, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check .term_chk .control_tm .control_label_tm {
+  font-size: 14px;
+  color: rgba(51, 51, 51, 0.7);
+}
+/* line 153, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check .term_chk .control_tm .control_indicator_tm {
+  width: 14px;
+  top: 4px;
+  height: 14px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  border-radius: 0;
+}
+/* line 159, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check .term_chk .control_tm .control_indicator_tm:after {
+  left: 4px;
+  top: 1px;
+  width: 2px;
+  height: 7px;
+}
+/* line 168, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-check a {
+  float: right;
+  font-weight: 14;
+  color: #000;
+  margin-top: 4px;
+  text-decoration: none;
+}
+/* line 176, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group {
+  margin-bottom: 26px;
+}
+/* line 178, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group label {
+  font-size: 15px;
+  color: #7e7e7e;
+  font-weight: 400;
+}
+/* line 183, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group input {
+  height: 49px;
+  border: 1px solid #acada5;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  -ms-border-radius: 28px;
+  border-radius: 28px;
+  font-size: 15px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(2, 3, 3, 0.21);
+  color: rgba(0, 0, 0, 0.6);
+  padding: 15px 22px;
+}
+/* line 43, ../scss/base/_mixins.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group input::-webkit-input-placeholder {
+  color: #6a6a6a;
+}
+/* line 44, ../scss/base/_mixins.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group input::-moz-placeholder {
+  color: #6a6a6a;
+}
+/* line 45, ../scss/base/_mixins.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group input::-moz-placeholder {
+  color: #6a6a6a;
+}
+/* line 46, ../scss/base/_mixins.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group input::-ms-input-placeholder {
+  color: #6a6a6a;
+}
+/* line 195, ../scss/base/_component.scss */
+.signup_model .modal-content .modal-body .tab-content .form-group .btn {
+  width: 100%;
+  background: #6bafff;
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  display: block;
+}
+
+/* line 1, ../scss/pages/_faq.scss */
+.banner_Sec {
+  background: #76d5f4 url(../images/banner_faq.jpg) top center no-repeat;
+  z-index: 4;
+  padding-top: 160px;
+  padding-bottom: 110px;
+}
+/* line 6, ../scss/pages/_faq.scss */
+.banner_Sec h2 {
+  font-size: 35px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* line 13, ../scss/pages/_faq.scss */
+.faq_text_sec {
+  background: transparent;
+  padding: 30px 0 50px 0;
+  position: relative;
+  background: #fff;
+  /* 767 px*/
+}
+@media (max-width: 767px) {
+  /* line 13, ../scss/pages/_faq.scss */
+  .faq_text_sec {
+    padding: 10px 0 20px 0;
+  }
+}
+/* line 21, ../scss/pages/_faq.scss */
+.faq_text_sec h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #333333;
+  text-align: left;
+  margin-bottom: 14px;
+  margin-top: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+/* line 30, ../scss/pages/_faq.scss */
+.faq_text_sec p {
+  font-size: 15px;
+  color: #999999;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 24px;
+}

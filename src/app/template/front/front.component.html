@@ -1,0 +1,533 @@
+<div class="loadingDiv" *ngIf="loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+<p-growl [(value)]="msgs"></p-growl>
+<div class="icon-bar">
+    <a href="https://www.facebook.com/Cryptoxygen/" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> 
+    <a href="https://www.quora.com/profile/Irina-Duisimbekova-2" target="_blank" class="quora"><i class="fa fa-quora"></i></a> 
+    <a href="https://t.me/CryptoxygenTalk" target="_blank" class="telegram"><i class="fa fa-telegram"></i></a> 
+    <a href="https://twitter.com/cryptoxygencoin" target="_blank" class="twitter-c"><i class="fa fa-twitter"></i></a> 
+    <!-- <a href="https://Instagram.com/Cryptoxygen" target="_blank" class="instagram"><i class="fa fa-instagram"></i></a>  -->
+    <a href="https://Reddit.com/user/Cryptoxygen" target="_blank" class="reddit"><i class="fa fa-reddit"></i></a> 
+    <!-- <a href="https://medium.com/@crypto.oxy2" target="_blank" class="medium"><i class="fa fa-medium"></i></a>  -->
+    <!-- <a href="https://Github.com/Cryptoxygen" target="_blank" class="github"><i class="fa fa-github"></i></a>  -->
+    <!-- <a href="https://Medium.com/Cryptoxygen" target="_blank" class="medium"><i class="fa fa-medium"></i></a>  -->
+    <!-- <a href="https://www.youtube.com/watch?v=l2uo2HKR3_0" target="_blank" class="youtube"><i class="fa fa-youtube"></i></a>  -->
+</div>
+<div class="container-fluid home_top_sec" style="padding: 0;">
+    
+    <!-- <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles> -->
+    <div id="wave_div"></div>
+    <div class="container banner_content">
+        <div class="row home_top_secIn"> 
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 home_top_secL">
+
+                <!-- <img src="./assets/images/video_sec.png"> -->                
+                <iframe  style="width: 100%;" height="315" src="https://www.youtube.com/embed/ts1kwdoE2wM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 home_top_secR">
+                <h2>
+                    <span style="font-weight: 700; color: #6bafff;"> First regulated European cryptocurrency exchange platform with complete solutions integrated directly in more than 1 million of notebooks and tablets per year!! </span>
+                    <br>
+                    Your easiest way to cryptocurrency exchange and secured wallet with payment solution </h2>
+                <h3>ICO is live now </h3>
+                <p style="color:#fff;"><b>PHASE {{ico_phase}} - 15% BONUS!</b></p>
+                <p class="stage"> PHASE {{ico_phase}} ends in: </p> <br>
+                <p class="mydbdate" style="display:none" *ngIf="coinenddate">{{ coinenddate | date:'fullDate' }}</p>
+
+                <ul class="timer">
+                    <li><a href="#" id="days"></a></li>
+                    <li><a href="#" id="hours"></a></li>
+                    <li><a href="#" id="minute"></a></li>
+                    <li><a href="#" id="second"></a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-12 text-right btn_banner">
+                <ul>
+                    <li class="start">
+                        <div class="tbl_div">
+                            <span class="start_here tbl_cell"> Start here </span> 
+                            <i class="fa fa-long-arrow-right tbl_cell"></i>
+                        </div>
+                    </li>
+                    <li>
+                            <my-modals [text]="'Buy OXY2 Tokens Now!'"></my-modals>
+                            <a style="font-weight: bold !important;" *ngIf="userservice.isLoggedIn()" routerLink="/dashboard"  class="btn" >Buy OXY2 Tokens Now!</a>
+                            
+                    </li>
+                    <li>
+                            <a style="font-weight: bold !important;" href="/assets/whitepaper/cryptoxygen.pdf" target="_blank" class="btn">View Whitepaper</a>
+                    </li>
+                </ul>
+                <!-- <my-modals [text]="'Buy OXY2 Tokens Now!'"></my-modals>
+                <a  *ngIf="userservice.isLoggedIn()" routerLink="/dashboard"  class="btn" >Buy OXY2 Tokens Now!</a>
+                <a href="http://Cryptoxygen.com/uploads/CryptoxygenWhitePaper.pdf" target="_blank" class="btn">View Whitepaper</a> -->
+            </div>
+            <div class="col-md-12 text-center sales_team">
+                <p>Are you interested in partnership with Cyrptoxygen or making a large investment?</p>
+                <a routerLink="/contact" class="btn red_btn" >Contact Our Sales Team</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid main_sec" style="float:left; width: 100%;">
+    <div class="container">
+        
+        <div class="progress_top">
+        <p>{{text}}: {{softcap | number:'1.1-2'}}$<span>Raised: {{totalVgwCollection | number:'1.1-2'}}$</span></p>
+            <div class="progress_out">
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" [style.width.%]="totalVgwCollection / softcap * 100"  aria-valuenow="60" aria-valuemin="0" aria-valuemax="100">{{totalVgwCollection / softcap * 100 | number:'1.1-2'}}%</div>
+              </div>
+            </div>
+        </div>
+        <h2>
+            <!-- <span>Cryptoxygen is working with the following Exchanges</span><br> -->
+             OXY2 token trading starts January 15th, 2019</h2>
+             
+        <!-- <div class="row home_sec_2">
+            <div class="contact_form">
+            <h3><span>Trade and Receive your</span><br>
+            Cryptocurrency here</h3>
+            <form action="/action_page.php">
+                <div class="form-group">
+                    <label>Trade</label>
+                    <input type="text" class="form-control" id="Trade" placeholder="Type here">
+                </div>
+                <div class="form-group">
+                    <label>Receive</label>
+                    <input type="text" class="form-control" id="pwd"  placeholder="Type here">
+                </div>
+                </form>
+            </div>   
+            <div class="home_graph">
+            <h3>Access Full Exchange</h3>
+            <img src="./assets/images/graph_img.jpg" alt="img" class="img-fluid"/>
+        </div>  
+    </div> -->
+        
+    <!-- <p><my-modals [text]="'Buy Crypto with Credit Card'"></my-modals>
+        <a  *ngIf="userservice.isLoggedIn()" routerLink="/dashboard"  class="btn" >Buy Crypto with Credit Card</a>
+    </p> -->
+    </div>
+</div>
+<!-- <div class="container-fluid press">
+    <div>
+        <a href="https://foundico.com/ico/Cryptoxygen.html" target="_blank" class="link-block-2 w-inline-block"></a>
+        <a href="https://www.trackico.io/ico/Cryptoxygen/" target="_blank" class="link-block-3 w-inline-block"></a>
+        <a href="https://www.initialcoinlist.com/ico/Cryptoxygen/" target="_blank" class="link-block-4 w-inline-block"></a>
+        <a href="https://findico.io/ico/Cryptoxygen" target="_blank" class="link-block w-inline-block"></a>
+        <a href="https://icobench.com/ico/Cryptoxygen" target="_blank" class="link-block-5 w-inline-block"></a>
+        <a href="https://bitcointalk.org/index.php?topic=5059630" target="_blank" class="link-block-6 w-inline-block"></a>
+    </div>
+</div> -->
+
+<div id="learn-more" class="section darkgrey">
+    <div class="container info_sec">
+    <div class="left_sec">
+        <h2 class="text-left">Phase 1: available Q3, 2019</h2>
+        <p><b style="color: #6bafff;">Our CRYPTOXYGEN exchange platform will be fully operational by the end of 2019 and directly integrated in more than 1,000,000 new Thomson Computing electronics units distributed on the five continents each year creating a natural marketing synergy of 1 Million potential new users.</b>  <br> Our platform will offer a wide pallet of complete solutions to satisfy every need of our customers.</p>
+        <p>Simple, easy to use platform, fast execution trades, quick deposits and withdrawals, advanced trading tools, social trading, online academy trading for beginners and advanced crypto-traders, loyalty programs, integrated secure hot and cold wallets, trading crypto-crypto and crypto-fiat, low commission fees, listing of the best evaluated tokens and much more to come…</p>
+        
+        <div class="twitter w-widget w-widget-twitter"><iframe src="https://platform.twitter.com/widgets/follow_button.html#screen_name=cryptoxygencoin&amp;show_count=true&amp;size=l&amp;show_screen_name=true&amp;dnt=true" scrolling="no" allowtransparency="true" style="border: none; overflow: hidden; width: 100%; height: 28px;" frameborder="0"></iframe>
+        </div>
+        <!-- <a href="https://t.me/CryptoxygenTalk" target="_blank" class="get-started-link">View&nbsp;Our explainer video Now ❯&nbsp;</a> -->
+    </div>
+    
+    <div class="rgt_sec">
+        <div class="laptop_img">
+        <img src="./assets/images/LaptopVGW1.png" class="img-responsive">
+        </div>
+    </div>
+</div>
+</div>
+<div class="section darkestgrey darkgrey">
+    <div class="container info_sec phase2">
+        <div class="left_img">
+        <div class="image-crop"><img src="./assets/images/PointOfSaleVGW.png" width="100%"> </div>
+        </div>
+        <div class="rgt_sec2">
+        <h2 class="heading text-left" style="color: #fff; font-size: 31px;">Phase 2 : Available Q3, 2019</h2>
+        <h3 class="heading text-left" style="color: #fff; font-size:17px; line-height: 20px; margin-top: 28px;"> CRYPTOXYGEN MULTIBLOCKCHAIN WALLET</h3>
+        <p>Cryptoxygen multiblockchain wallet available for mobiles and will be supported by Android and Apple. Store tokens in secure way and transfer features from one user’s wallet to another one.</p>
+        <ul class="feature-list">
+            <li class="feature-item">
+            <div class="feature-icon-wrapper"><img src="./assets/images/secuirty.png" width="46px" class="img-responsive"> </div>
+            <div class="feature-text title">Store Cryptocurrencies with highest security available</div>
+            </li>
+            <li class="feature-item">
+            <div class="feature-icon-wrapper"><img src="./assets/images/qr_code.png" width="46px" class="img-responsive"></div>
+            <div class="feature-text title">Send / Receive Crypto & Tokens by using QR code </div>
+            </li>
+            <li class="feature-item">
+            <div class="feature-icon-wrapper"><img src="./assets/images/track_transfer.png" width="46px" class="img-responsive"></div>
+            <div class="feature-text title">Track your transfers on blockchain</div>
+            </li>
+            <li class="feature-item">
+            <div class="feature-icon-wrapper"><img src="./assets/images/built_in_cal.png" width="46px" class="img-responsive"></div>
+            <div class="feature-text title">Built-in calculator</div>
+            </li>
+        </ul>
+        </div>
+   </div>
+</div>
+<!-- <div class="section darkgrey">
+    <div class="w-container">
+        <div class="w-row">
+        <div class="w-col w-col-7">
+            <h2 class="heading text-left">Phase 2 : VegaPay</h2>
+            <p class="paragraph">Built into Cryptoxygen - Users will be able to pay with cryptocurrency anytime or anywhere. This includes locations and websites that do not yet accept cryptocurrency. </p>
+            <ul class="feature-list w-list-unstyled">
+            <li class="feature-item w-clearfix">
+                <div class="feature-icon-wrapper"><img src="./assets/images/online-shop.png" width="46" sizes="46px" class="feature-icon img-responsive"></div>
+                <div class="feature-text title">Pay with Crypto (Anytime &amp; Anywhere)</div>
+                <div class="feature-text">Cryptoxygen accomplishes this by combining our high liquidity exchange with the VegaPay engine.</div>
+            </li>
+            <li class="feature-item w-clearfix">
+                <div class="feature-icon-wrapper"><img src="./assets/images/smartphone.png" width="46" sizes="46px" class="feature-icon img-responsive"></div>
+                <div class="feature-text title">Near Field Communication (NFC) Ready</div>
+                <div class="feature-text">VegaPay will use NFC technology on newer smartphones to complete transactions from our payment engine.</div>
+            </li>
+            <li class="feature-item w-clearfix">
+                <div class="feature-icon-wrapper"><img src="./assets/images/shield-2.png" width="46" sizes="46px" class="feature-icon img-responsive"></div>
+                <div class="feature-text title">One Time Use Card Numbers</div>
+                <div class="feature-text">Want to spend your crypto online but they don&#x27;t accept it yet? VegaPay is the most secure crypto to fiat solution. </div>
+            </li>
+            </ul>
+        </div>
+        <div class="image-column w-col w-col-5">
+            <div class="image-crop iphone"><img src="./assets/images/iPhoneVGW1.png" width="300px"  class="iphone-image img-responsive"></div>
+        </div>
+        </div>
+    </div>
+</div> -->
+<div class="section black">
+    <div class="w-container">
+        <div class="title">
+        <h2 class="heading text-left">The Cryptoxygen Token (ICO Breakdown)</h2>
+        <p class="paragraph-3">The ERC20 OXY2 Token Initial Coin Offering Starts on January 15th, 2019. Each Phase Lasts for Exactly 20 Days with Decreasing Bonuses.</p>
+        </div>
+        <div class="pricing-row w-row">
+        <div class="w-col w-col-4">
+            <div class="pricing-column">
+            <h3 class="plan-title">Phase 1 </h3>
+            <div class="price">1600 OXY2</div>
+            <div class="per-month">PER 1 ETH</div>
+            <div class="price-feature-list">
+                <div class="price-feature">1 OXY2 = 0.000625 ETH</div>
+                <div class="price-feature">0.12 USD$</div>                
+                <div class="price-feature"><b>20% Bonus</b></div>
+                <div class="price-feature">January 15th, 2019<br>‍</div>
+            </div>
+            </div>
+        </div>
+        <div class="w-col w-col-4">
+            <div class="pricing-column">
+            <h3 class="plan-title pro">Phase 2</h3>
+            <div class="price">1400 OXY2</div>
+            <div class="per-month">PER 1 ETH</div>
+            <div class="price-feature-list">
+                <div class="price-feature">1 OXY2 = 0.000714 ETH</div> 
+                <div class="price-feature">0.14 USD$</div>                
+                <div class="price-feature"><b>15% Bonus</b></div>
+                <div class="price-feature"><!--All Phases last exactly 20 days--><br>‍</div>
+            </div>
+            </div>
+        </div>
+        <div class="w-col w-col-4">
+            <div class="pricing-column">
+            <h3 class="plan-title">Phase 3</h3>
+            <div class="price">1200 OXY2</div>
+            <div class="per-month">PER 1 ETH</div>
+            <div class="price-feature-list">
+                <div class="price-feature">1 OXY2 = 0.000833 ETH</div>  
+                <div class="price-feature">0.16 USD$</div>               
+                <div class="price-feature"><b>10% Bonus</b></div>
+                <div class="price-feature">Extended until June 30th, 2019<br>‍</div>
+            </div>
+            </div>
+        </div>
+            <p class="text-center" style="float: left;width: 100%;margin-top: 16px;color: #fff;font-size: 16px;">* Based on the price of Etherium at US $190</p>
+        </div>
+        <div class="token_distribution_sec"> 
+            <img src="./assets/images/token_distribution.png" alt="Token distribution">
+        </div>
+        <!-- <div class="token_distribution">            
+            <p>Token Distribution Breakdown:</p>
+            <p>150 Million Tokens (60%) will be available for Public Purchase during several phases of the ICO; early coming investors will be granted special bonuses and early access to our platform and wallet.</p>
+            <p>15 Million Tokens (6%) will be available for private Investors Pre-ICO phase.</p>
+            <p>40 Million Tokens (16%) will be placed in the Founders Fund and locked under smart contract for several months.</p>
+            <p>45 Millions Tokens (18%) will be used for the development of the company.</p>
+            <br>
+            <p>ICO Funds Distribution Breakdown:</p>
+            <p>40% For Development of Exchange Platform  <br>
+                25% For Marketing <br>
+                10% For Payroll and New recruitment <br>
+                15% Security <br>
+                5% Legal Fees<br>
+                5% Other Expenses <br>
+            </p>
+            <p>(You can read the full breakdown and development road map in our <a href="./assets/whitepaper/cryptoxygen.pdf" target="_blank" class="link-2">white paper</a>)</p>
+        </div>     -->
+    </div>
+</div>
+
+<div class="section-2 our_team">
+    <div class="w-container">
+        <div class="w-row team_row"> 
+            <div class="w-col w-col-4"><img src="./assets/images/Stephan.jpg" width="292" alt="Tarek" class="image-5">
+                <div class="rich-text-block w-richtext">
+                    <h2>Stephan Francais<br></h2>
+                    <h4><strong>chairman, co-founder</strong></h4>
+                    <p>Graduated from a Master of business creation in Paris X, but also a DEA in political science and a PhD in political science whose subject was the development of an axis of cooperation between Asia and France...</p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template1)">Read more</button>
+                </div>
+            </div>
+            <div class="w-col w-col-4"><img src="./assets/images/Irina.jpg" width="295" alt="JacobProfile" class="image-4">
+                <div class="rich-text-block-2 w-richtext">
+                    <h2>Irina Duisimbekova </h2>
+                    <h4><strong>Vice President Development, <br> CO-Founder & Board Member</strong></h4>
+                    <p>Graduated from South Bank University, London, MBA Degree in 2003. </p>
+                    <p>Since 2007, she has been running her brokerage company in the field of agricultural ...</p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template2)">Read more</button>
+                </div>
+            </div>
+            <div class="w-col w-col-4"><img src="./assets/images/Alexandre.jpg" width="292" alt="DeaProfile" class="image-6">
+                <div class="rich-text-block-3 w-richtext">
+                    <h2>Alexandre Katrangi </h2>
+                    <h4><strong>CEO CO-Founder</strong></h4>
+                    <p>Graduated from the Trinity College with an MBA of International Business. </p>
+                    <p>Over the past 20 years within USA, France, Middle East & Africa, he has established...</p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template3)">Read more</button>
+                </div>
+            </div>
+            <div class="w-col w-col-4"><img src="./assets/images/jean.jpg" width="292" alt="DeaProfile" class="image-6">
+                <div class="rich-text-block-3 w-richtext">
+                    <h2>Jean-Paul Louis Ney</h2>
+                    <h4><strong>Press Director</strong></h4>
+                    <p>For more than 20 years, he has been an hi-tech investigative reporter and war reporter, following conflicts in Africa and the Middle East. Former director of the French Centre for...</p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template4)">Read more</button>
+                </div>
+            </div>
+            <div class="w-col w-col-4"><img src="./assets/images/vikram_singh.jpg" width="289" alt="DeaProfile" class="image-6">
+                <div class="rich-text-block-3 w-richtext">
+                    <h2>Vikram Singh</h2>
+                    <h4><strong>ICO Consultant</strong></h4>
+                    <p>Founder & CEO of Antier Solutions. His experience with blockchain technology and ICO’s helps Cryptoxygen during fundraising and production. </p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template5)">Read more</button>
+                </div>
+            </div>
+            <div class="w-col w-col-4"><img src="./assets/images/thomas1.jpg" width="289" alt="Profile" class="image-6">
+                <div class="rich-text-block-3 w-richtext">
+                    <h2>Thomas George</h2>
+                    <h4><strong>ICO Consultant</strong></h4>
+                    <p>Operations Manager at Antier Solutions. Thomas brings the knowledge of successfuly operating ICO’s to Cryptoxygen.</p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template6)">Read more</button>
+                </div>
+            </div>
+            <div class="w-col w-col-4"><img src="./assets/images/ashima1.jpg" width="291" alt="DeaProfile" class="image-6">
+                <div class="rich-text-block-3 w-richtext">
+                    <h2>Ashima Arora</h2>
+                    <h4><strong>Head, Digital Marketing</strong></h4>
+                    <p>With 11  year of experience in digital marketing, Ashima focuses on leveraging all possible marketing channels to establish online presence and brand trust for Cryptoxygen...</p>
+                    <button type="button" class="btn btn-primary" (click)="openModal(template7)">Read more</button>
+                      
+               </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="rich-text-block-5 w-richtext">
+        <h3>Want to View the Rest of Our Team?</h3>
+        <p> Information on our 25+ Team Members is Available in our White Paper!</p>
+    </div> -->
+</div>
+
+<div class="container-fluid press">
+    <div class="container">
+        <div class="row flex_row">
+            <a href="https://icocoinlist.com/ico/cryptoxygen" target="_blank" class="link-block-3 w-inline-block"> <img src="./assets/images/press9.png" alt="icocoinlist"></a>
+            <a href="https://foundico.com/ico/cryptoxygen.html" target="_blank" class="link-block-2 w-inline-block"> <img src="./assets/images/foundico.png" alt="foundico"></a>            
+            <a href="https://icopulse.com/ico/cryptoxygen" target="_blank" class="link-block-4 w-inline-block"> <img src="./assets/images/press10.png" alt="icopulse"></a>
+            <a href="https://bitcointalk.org/index.php?topic=5092613.new" target="_blank" class="link-block-5 w-inline-block"> <img src="./assets/images/press5.png" alt="bitcointalk"></a>
+            <a href="https://icogears.com/" target="_blank" class="link-block-1 w-inline-block"> <img src="./assets/images/press8.png" alt="icogear"> </a>
+            <a href="https://coincodex.com/crypto/cryptoxygen/" target="_blank" class="link-block-6 w-inline-block"> <img src="./assets/images/press6.png" alt="coincodex"></a>
+            <a href="https://www.trackico.io/ico/cryptoxygen/" target="_blank" class="link-block-7 w-inline-block"> <img src="./assets/images/press.png" alt="trackico"></a>
+            <a href="https://www.icolighthouse.com/en/Cryptoxygen" target="_blank" class="link-block-8 w-inline-block"> <img src="./assets/images/press7.png" alt="icolighthouse"></a>             
+            <a href="https://icobench.com/ico/cryptoxygen" target="_blank" class="link-block-8 w-inline-block"> <img src="./assets/images/press4.png" alt="icobench"></a>             
+            <a href="https://icobazaar.com/v2/cryptoxygen" target="_blank" class="link-block-8 w-inline-block"> <img src="./assets/images/press11.png" alt="icobazaar"></a>             
+        </div>
+    </div>
+</div>
+
+
+<div class="no-pad-section">
+    <div class="w-row ">
+        <div class="tbl_div">
+            <div class="padded-column picture w-col w-col-6 tbl_cell">
+                <img src="./assets/images/thomson_img.png" alt="img">
+            </div>
+            <div class="padded-column w-col w-col-6 tbl_cell">
+                <div class="width-limiter">
+                    <h2 class="heading text-left">The Cryptoxygen Partnerships</h2>
+                    <h2 class="heading text-left">Thomson Computing</h2>
+                    <P>One of the Cryptoxygen founder, Stehan Francais, entrepreneur of the year 2018 is also the owner and founder of the French iconic electronic brand Thomson Computing conquering the world with more than 1 000 000 units sold yearly.</P>
+                    <P>The partnership would allow Cryptoxygen to include the exchange platform directly into each unit Thomson Computing produces with a natural market penetration of 1 million new users across the globe.</P>
+                    <P>This is an exclusive strength which allows Cryptoxygen to attract a massive number of users within very short period of time.</P>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="chamber_logo text-center">
+    <img src="./assets/images/CCFE.png" alt="logo">
+    <a href="http://www.ccfe.ee" target="_blank">http://www.ccfe.ee</a>
+</div>
+<div class="chamber_logo text-center crowd_loo_sec">
+    <img src="./assets/images/crowd.png" alt="logo">
+    
+</div>
+<div class="license">
+    <p>CRYPTOXYGEN OÜ is a licensed crypto exchange and wallet service provider under licences:  FRK000547 and FVR000637.
+    </p>
+</div>
+<div class="section sign-up">
+    <div class="w-container">
+        <div class="w-row">
+        <div class="w-col w-col-8">
+            <h2 class="sign-up-title">Want to learn more about Cryptoxygen?</h2>
+            <div class="subtitle pricing">We constantly post informative blogs and articles to help you stay on top of our project.</div>
+        </div>
+        <div class="sign-up-column w-col w-col-4"><a target="_blank"  href="https://cryptoxygen.wordpress.com/" class="button">Explore our blogs</a></div>
+        </div>
+    </div>
+</div>
+
+<div class="modal_wrap">
+    <ng-template #template7>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/ashima.jpg" width="150" height="150" alt="DeaProfile" class="image-6">
+            <h4>Ashima Arora</h4>
+            <h5><strong>Head, Digital Marketing</strong></h5>
+            <p>With 11  year of experiance in digital marketing, Ashima focuses on leveraging all possible marketing channels to establish online presence and brannd trust for Cryptoxygen, to ensure a sucessful ICO venture. The focus is on following a multi-faced marketing approach 
+                and targeting mediums favored by the cryptocurrency community. </p>
+            <p class="view_bill"><a target="_blank" href="https://www.linkedin.com/in/ashima-arora/">View Ashima Arora on LinkedIn</a></p>
+        </div>
+    </ng-template>
+
+    <ng-template #template1>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/Stephan.jpg" width="150" alt="DeaProfile" class="image-6">
+            <h4>Stephan Francais</h4>
+            <h5><strong>chairman, co-founder</strong></h5>
+            <p>Graduated from a Master of business creation in Paris X, but also a DEA in political science and a PhD in political science whose subject was the development of an axis of cooperation between Asia and France.</p>
+            <p>At the end of his studies, he decides to embark on computer science in the <b>PPR group</b> <em>(which became <b>KERING group</b> since 2013, the international luxury group based in Paris, France; owner of luxury goods brands, including Gucci, Yves Saint Laurent, Balenciaga, Alexander McQueen, Bottega Veneta, Boucheron and Brioni, Pomellato, owned & headed by François-Henri Pinault since 2005, the famous French tycoon & philanthropist)</em></p>
+            <p>10 years after, by finishing the purchasing director at the largest European technology distribution company <b>SURCOUF</b>; Stephan decided to conduct a first entrepreneurial adventure with DNS as an associate for the development of a range of AUDIO/VIDEO trades under the brand <b>“Sound Vision”</b>.</p>
+            <p>Further to this wild experience, he decides to mount his personal structure to revive the historic French technology brand <b>“Thomson Computing”</b> (founded in 1893) to re-start IT, computers and laptops products with the aim to provide “technology for all” around the globe with a 5 years proven success of having deploy the Thomson Computing products and brand around the world.</p>
+            <p>Stephan Francais has been awarded the title of Entrepreneur of the Year in 2018.</p>
+            <p class="view_bill"><a target="_blank" href="https://www.linkedin.com/in/stephan-fran%C3%A7ais-6139614a/">View Stephan Francais on LinkedIn</a></p>
+        </div>
+    </ng-template>
+
+    <ng-template #template2>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/Irina.jpg" width="150" alt="DeaProfile" class="image-6">
+            <h4>Irina Duisimbekova </h4>
+            <h5><strong>Vice President Development, <br> CO-Founder & Board Member</strong></h5>
+            <p>Graduated from South Bank University, London, MBA Degree in 2003. </p>
+            <p>Since 2007, she has been running her brokerage company in the field of agricultural and energetic commodities sector supplying the largest companies from Russia, Kazakhstan, Brazil, France, the Kingdom of Saudi Arabia, China and the Kingdom of Bahrain in joint-venture with the investment company of a Prime Member of a GCC Royal Family.</p>
+            <p>In 2016 she became the CEO in the Arabian Gulf of a Swiss multinational Fortune 500 petroleum commodities trading company, located in the Kingdom of Bahrain with revenues over 3 billion USD annually. </p>
+            <p>In 2018 she also invested and became partner in a new venture named Licorne Gulf along with the <b>Thomson Computing Group</b> of Stephan Francais with the aim of covering exclusively the territories of Gulf Cooperation Countries and Russia for the Thomson Computing brand commercial and industrial sales & development.</p>
+            <p>She is fluent in French, English and Russian.</p>
+            <p class="view_bill"><a target="_blank" href="https://www.linkedin.com/in/irina-duisimbekova-88a72548/">View Irina Duisimbekova on LinkedIn</a></p>
+        </div>
+    </ng-template>
+
+    <ng-template #template3>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/Alexandre.jpg" width="150" alt="DeaProfile" class="image-6">
+            <h4>Alexandre Katrangi</h4>
+            <h5><strong>CEO CO-Founder</strong></h5>
+            <p>Graduated from the Trinity College with an MBA of International Business. </p>
+            <p>Over the past 20 years within USA, France, Middle East & Africa, he has established and implemented energy, technology and industrial projects in emerging areas, raising the necessary finances for capex & opex and providing strategic advices and contacts for the development, experiencing constant growth and vibrant activities, for a range of companies and individuals from blue chip institutions, large Fortune 500 conglomerates to private investors and UHNW individuals. </p>
+            <p>Partners and Clients relied on him for critical financials, legal, and strategic commercial advices on investments and deployment as well as optimized ROI. </p>
+            <p>Over the past 16 years Alexandre has held the position of Board Member and Advisor of a Prime Member of the Saudi Royal Family. He also holds the position of Vice President of Strategic Investments of a Forbes Fortunes private family from the Emirates.</p>
+            <p>In 2018 he invested in the venture Licorne Gulf along with Thomson Computing Group and Irina to become partner in the structure and support the international development of the Thomson Computing products across the globe.</p>
+            <p class="view_bill"><a target="_blank" href="https://www.linkedin.com/in/alexandrekatrangi/">View Alexandre Katrangi on LinkedIn</a></p>
+        </div>
+    </ng-template>
+
+    <ng-template #template4>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/jean.jpg" width="150" alt="DeaProfile" class="image-6">
+            <h4>Jean-Paul Louis Ney</h4>
+            <h5><strong>Press Director</strong></h5>
+            <p>For more than 20 years, he has been an hi-tech investigative reporter and war reporter, following conflicts in Africa and the Middle East. Former director of the French Centre for Research on Terrorism (CIReT) from 2003 to 2007, he was trained by Yves Bonnet, former director of the DST (French “FBI”). In 1999 he published a book "Virtual Terrors", an impressive top n°1 investigation on cybercrime, stalking and running after the biggest world hackers, thus he found "The Analyzer" the hacker of the Pentagon (1998), a world scoop with SIPA PRESS and Canal Plus Group.  </p>
+            <p>Earlier 2000’s, following his studies and work, he is recruited by police commissioner Daniel Martin, former boss of the cyber branch of the DST, and OCDE member. Together, they create the “Cybercrime Institute” in Paris, known as the IIHEC (International Institute of Advanced Cybercrime Studies).</p>
+            <p>Jean-Paul Louis joins Canal Plus group in 2000 where he worked on several business, hi-tech and social long investigations. He was the first French reporter officially invited by the National Security Agency (NSA, Fort Meade) and its engineers from the American Intelligence Community.</p>
+           <p>In 2005 he worked as a consultant for the Interdepartmental Delegate for Defense Restructuring (DIRD), Jean-Pierre Aubert. </p>
+           <p>In 2007, French President Nicolas Sarkozy entrusted him with the task of producing a book, a « tribute » to the police officers in charge of protecting high-ranking personalities: the SPHP (French secret service). The book, “Le Dernier Rempart” (the Last Rampart) is published with an exclusive foreword by president Sarkozy. </p>
+           <p>For years now, he has been working on topics related to the evolution of societies, businesses and their protection, both for television (BFMTV, CNN, AL-JAZEERA, AL-MAYADEEN, i24 ...) and for the press and Internet (France Evening, VSD, Paris-Match ...).</p>
+           <p>Jean-Paul Louis is also co-founder of IICRAI (International Institute for Coordination and Response to Cyber Attacks) with Christophe Casalegno, Technical Director of the Digital Network Group.</p>
+           <p>Professor in several business schools and journalism schools, Jean-Paul Louis is now providing strategic press advices and crisis responses (fighting fakenews and disinformation, facing information warfare) to private companies individuals as politicians, lawyers, CEOs, and governments. In a confidential work, Jean-Paul Louis was press advisor for the French Special Forces during five years.  </p>
+           <p>In 2013 he launched a confidential letter: CryptoConfidential, with hundreds of followers.</p>
+            <p class="view_bill"><a target="_blank" href="#"></a></p>
+        </div>
+    </ng-template>
+
+    <ng-template #template5>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/vikram_singh.jpg" width="150" alt="DeaProfile" class="image-6">
+            <h4>Vikram Singh</h4>
+            <h5><strong>ICO Consultant</strong></h5>
+            <p>Founder & CEO of Antier Solutions. His experience with blockchain technology and ICO’s helps Cryptoxygen during fundraising and production. </p>
+            <p class="view_bill"><a target="_blank" href="https://www.linkedin.com/in/vikramrsingh/">View Vikram Singh on LinkedIn</a></p>
+        </div>
+    </ng-template>
+
+    <ng-template #template6>
+        <div class="modal-header">
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+            <img src="./assets/images/thomas1.jpg" width="150" alt="DeaProfile" class="image-6">
+            <h4>Thomas George</h4>
+            <h5><strong>ICO Consultant</strong></h5>
+            <p>Operations Manager at Antier Solutions. Thomas brings the knowledge of successfuly operating ICO’s to Cryptoxygen.</p>
+            <p class="view_bill"><a target="_blank" href="https://www.linkedin.com/in/thomas-george-1690786/">View Thomas George on LinkedIn</a></p>
+        </div>
+    </ng-template>
+</div>

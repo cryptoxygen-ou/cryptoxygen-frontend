@@ -1,0 +1,138 @@
+<div class="loadingDiv" *ngIf="loading">
+    <p-progressSpinner></p-progressSpinner>
+  </div>
+<!-- <particles [params]="myParams" [style]="myStyle" [width]="width" [height]="height"></particles> -->
+<!-- <div class="container-fulid banner-inner" style="background: url(./assets/images/banner.png)"> -->
+<div class="container-fulid banner-inner">
+    <div id="wave_div"></div>
+    <h2>FAQ'<span style="text-transform:capitalize">s</span></h2>
+</div>
+<div class="container faq">
+
+    <accordion [closeOthers]="oneAtATime">
+        <accordion-group heading="What is cryptocurrency?">
+            <p> Cryptocurrency is a new form of virtual currency in which banks are replaced with blockchain ledger technology. Please read up on cryptocurrency before investing or using our platform</p>
+        </accordion-group>
+        <accordion-group heading="What is an Initial Coin Offering (ICO)?">
+            <p>An ICO is a new form of crowdfunding powered by smart contracts in which users gain discounted tokens in return for initial investments. The tokens then become available to use on our platform or other exchanges.</p>
+        </accordion-group>
+        <accordion-group heading="What is Cryptoxygen?">
+            <p>Cryptoxygen is a complete cryptocurrency platform. It provides a cold and hot storage wallets, simple exchange, and NFC mobile payment solution. Please read our  <a href="./assets/whitepaper/cryptoxygen.pdf" tager="_blank">white paper</a>.</p>
+        </accordion-group>
+        <accordion-group heading="Where is Cryptoxygen available?">
+            <p>Cryptoxygen is free to <a target="_blank" href="http://thecryptoxygen.com/">download</a> to anyone, anywhere. Please follow all local laws and regulations when using our platform. </p>
+        </accordion-group>
+        <accordion-group heading="What is Cryptoxygen’s ICO plan?">
+            <ul>                
+                <li><p><strong>Token Name:</strong> Cryptoxygen Token </p></li>
+                <li><p><strong>Token Symbol:</strong> OXY2 </p></li>
+                <li><p><strong>Token Execution Environment:</strong> Ethereum Platform</p></li>
+                <li><p><strong>Token Standard:</strong> Ethereum ERC-20</p></li>
+                <li><p><strong>Token Decimal Units:</strong> 5 Decimals</p></li>
+                <li><p><strong>Token Sales Currencies:</strong> Ethereum, Algorithms for purchase in ETH, EUR & USD</p></li>
+                <li><p><strong>Token Emission Standard Price:</strong> 1600 OXY2 Tokens for 1 Ethereum (Stage 1)</p></li>
+                <li><p><strong>Total Supply Created:</strong> 250,000,000</p></li>
+            </ul>
+        </accordion-group>
+        <accordion-group heading="When will I get my OXY2 tokens?">
+            <p>Your OXY2 tokens will be deposited to your Cryptoxygen (or other ERC-20 based wallet) within two business weeks of ICO completion. Cryptoxygen may deposit OXY2 tokens into your account before ICO end if you purchase early, however these funds will not be useable until the ICO has ended.</p>
+        </accordion-group>
+        <accordion-group heading="How can I buy OXY2 tokens?">
+            <p>During our ICO phase you can purchase OXY2 tokens with ETH, or Credit Card. <a routerLink="/dashboard">Click here to purchase</a>. After ICO completion you can acquire OXY2 tokens on our exchange or other participating sources.</p>
+        </accordion-group>
+        <accordion-group heading="Is my purchase of OXY2 tokens refundable?">
+            <p>All purchases of OXY2 tokens through our ICO are final.</p>
+        </accordion-group>
+        <accordion-group heading="How can I use my OXY2 tokens?">
+            <p>OXY2 tokens do not act as securities and can only be used in ways specified in our <a href="./assets/whitepaper/cryptoxygen.pdf" tager="_blank">white paper</a>. These include : Zero Fee transfers between our exchange and wallet, Reduced trading fees on Cryptoxygen’s exchange, The OXY2 loyalty and rewards program, and for other advanced features on our exchange platform and mobile application.</p>
+        </accordion-group>
+        <accordion-group heading="When the features will be available?">
+            <p>Functions are divided into two phases. We will start development of phase one after completion of ICO, which will include our wallet and exchange. Phase two will  bring more advanced features such as : loyalty and rewards programs, online trading academy, social trading and crypto to fiat mobile payment solution. Please check at our roadmap for more details.</p>
+        </accordion-group>
+        <accordion-group heading="Will OXY2 be featured on other exchanges?">
+            <p>Yes, please check our<a  routerLink="/roadmap"> roadmap</a> for a more exact timeframe.</p>
+        </accordion-group>
+    </accordion>
+    
+    <h4>Exchange and Transactions</h4>
+
+    <accordion [closeOthers]="oneAtATime">
+        <accordion-group heading="What other coins or tokens will be featured on Cryptoxygen’s exchange?">
+            <p>Cryptoxygen will start with the main coins or tokens that have previously been paired with USD. More popular coins/tokens in the top 100 market cap will also be added regularly.</p>
+        </accordion-group>
+        <accordion-group heading="Can I get my coin/token listed on Cryptoxygen’s exchange?">
+            <p>Yes, please read up on our <a href="http://thecryptoxygen.com/" target="_blank"> List-A-Coin</a> program.</p>            
+        </accordion-group>
+        <accordion-group heading="What payment methods does Cryptoxygen accept?">
+            <p>In order to buy or sell digital assets on our platform customers must first be KYC verified. Once verification is submitted and accepted customers will be able to use most major credit cards. Withdraws will also be processed through bank and card information the user has on file.</p>            
+        </accordion-group>
+        <accordion-group heading="Can I cancel my transaction?">
+            <p>Blockchain transactions can not be returned, please verify your wallet address before sending any funds. Never send funds to what appears to be a scam.</p>
+        </accordion-group>
+        <accordion-group heading="Why is my wallet address invalid?">
+            <p>If you are having problems with an external wallet please double check your wallet address. To make things simpler use <a href="http://thecryptoxygen.com/" target="_blank"> Cryptoxygen’s application.</a></p>
+        </accordion-group>
+        <accordion-group heading="What are network fees?">
+            <p>Blockchain based cryptocurrencies often have network fees. These fees help to verify the legitimacy of transactions and have no affiliation to Cryptoxygen. Please make sure you are exchanging or sending an amount large enough to cover these small fees or your funds may be lost forever.</p>
+        </accordion-group>
+        <accordion-group heading="Why was my payment different than expected?">
+            <p>Always remember to factor in any network or trading fees if not included in your estimate. Some cryptocurrencies also remain volatile and price can change quickly in markets. Do your research before trading.</p>
+        </accordion-group>
+        <accordion-group heading="How long will my transaction take to process?">
+            <p>Transaction processing time has many factors. Most transactions will post quickly. Please allow up to 30 minutes for your transaction to complete and be verified. Larger transactions may take extra time.</p>            
+        </accordion-group>
+    </accordion>
+    
+   
+    <h4>Wallet and Mobile Payments</h4>
+
+    <accordion [closeOthers]="oneAtATime">
+        <accordion-group heading="How does your wallet work?">
+            <p>Our wallet has a cold and hot storage feature. Hot storage and the exchange are available on the mobile application as well. It currently supports BTC, LTC, ETH, and OXY2. Users will be able to transfer funds and keep track of assets easily. For more specifics read our<a href="./assets/whitepaper/cryptoxygen.pdf" tager="_blank"> white paper.</a></p>
+        </accordion-group>
+        <accordion-group heading="Can i keep funds in cold storage and transfer them when needed?">
+            <p>Yes, once cold storage is available users can log into Cryptoxygen on their desktop to transfer funds between hot and cold storage.</p>
+        </accordion-group>
+        <accordion-group heading="Can i deposit my mining returns into Cryptoxygen?">
+            <p>Cryptoxygen is a perfect platform to keep track of all mining returns. Please ensure that the coin or token you are mining is supported by our platform. If not, look for it to be supported in the near future!  </p>
+            <p><b>Note: </b>Our wallet platform changes public Bitcoin addresses periodically so please ensure if you are using Cryptoxygen for Bitcoin mining to always check to make sure your deposit address matches. Cryptoxygen is not responsible for user error.</p>
+        </accordion-group>
+        <accordion-group heading="How will the mobile payment system work?">
+            <p>Cryptoxygen will introduce our mobile payment system at the end of phase two. Cryptoxygen will be able to instantly transfer the desired amount of crypto in your wallet to fiat currency and send it to traditional payment processing terminals using NFC (Near Field Communication) technology on newer generation smartphones. This replaces the need to carry the “crypto debit card” many other start-ups are offering.</p>
+        </accordion-group>
+        <accordion-group heading="Do i have to sign-up?">
+            <p>OXY2 tokens can be deposited to any ethereum based wallet. However, to use Cryptoxygen’s features, our exchange, or make a purchase users must create an account.</p>
+        </accordion-group>
+        <accordion-group heading="Is my account secure?">
+            <p>Here at Cryptoxygen we use two factor authentication technology and will be introducing more security protocols through research and development. Our platform will also be security and breach tested regularly. Cold storage is offline and not subject to internet hazards.</p>
+        </accordion-group>
+    </accordion>
+   
+    <h4>Customer Service</h4>
+    <accordion [closeOthers]="oneAtATime">
+        <accordion-group heading="My network has been compromised, what should I do? ">
+            <p>Cryptoxygen uses multi-signature technology for our wallets, also make sure you always use 2FA authorization for your account as well. If your network has been compromised please change all passwords and check to make sure all authentication processes lead to your devices and not another user. </p>
+            <p><b>Note:</b> Always make sure you are accessing the real Cryptoxygen website and not a “scam” website clone. Cryptoxygen will never ask you to transfer your funds or for your password.</p>
+        </accordion-group>
+        <accordion-group heading="What should I do if my account is hacked or if someone stole my funds?">
+            <p>Please fill out and submit a <a routerLink="/contact" target="_blank">customer support form.</a> Please provide a detailed explanation on how the hack happened, blockchain links of all wallets involved, and a signed NDA agreeing to obey non-disclosure standards for our platform. If applicable Cryptoxygen will work with local law enforcement, however a police report must be filed within 24 hours of the original transaction.</p>
+        </accordion-group>
+        <accordion-group heading="Does Cryptoxygen have impersonators online I should be worried about?">
+            <p>All digital asset companies now deal with scammers and hackers on a daily basis. This not only affects our company but our users. Support will never ask for information through any other platform but our own. No support will be given over Facebook, Twitter, Telegram, Discord, or any other social media channel.</p><br>
+            <p><b>Note:</b> Always make sure you are talking to a real Cryptoxygen representative from <a href="http://thecryptoxygen.com/" target="_blank"> www.thecryptoxygen.com</a>. As mentioned before Cryptoxygen will never ask users to transfer money or digital assets for any reason. </p>
+        </accordion-group>
+        <accordion-group heading="What’s the best way to secure my Cryptoxygen account?">
+            <p> Users should always use a unique email for our platform that isn’t made public. Always enable 2FA on your account and follow the procedures marked out on your screen. Users should also always secure their phone and computers with passcodes and the latest anti-virus software. Cryptoxygen does our part in ensuring your funds remain safe. However if users display noticeable negligence we cannot promise that funds will remain safe.</p>
+        </accordion-group>
+        <accordion-group heading="I am having trouble using Cryptoxygen. What should i do?">
+            <p>Please fill out and submit a <a routerLink="/contact" target="_blank">customer support form.</a> Or call customer support.</p>
+        </accordion-group>
+        <accordion-group heading="I would like to provide feedback, what should I do?">
+            <p>Please fill out and submit a <a routerLink="/contact">feedback survey form.</a></p>
+        </accordion-group>
+        <accordion-group heading="Where do I download the applications?">
+            <p>Click <a target="_blank" href="http://thecryptoxygen.com/"> here</a> to download on your Mac or PC. Mobile applications are available <a target="_blank" href="http://thecryptoxygen.com/">here.</a> </p>
+        </accordion-group>
+    </accordion>
+</div>
+

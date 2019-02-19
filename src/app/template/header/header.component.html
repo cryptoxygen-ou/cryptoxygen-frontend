@@ -1,0 +1,70 @@
+<div [ngSwitch]="panel">
+        <div class="allInfo" *ngSwitchCase="'home'"> 
+                <header> 
+                        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                                <button class="navbar-toggler navbar-toggler-right with_pro" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                                <!-- <a class="navbar-brand for_desk" routerLink="/"><img src="{{dirPath}}/assets/images/logo.png"></a> -->
+                                <a class="navbar-brand for_desk" routerLink="/"><img src="./assets/images/logo.png"></a>
+                                <!-- <a class="navbar-brand for_mobile" routerLink="/"><img src="{{dirPath}}/assets/images/logo.png"></a> -->
+                                <a class="navbar-brand for_mobile" routerLink="/"><img src="./assets/images/logo_s.png"></a>
+                                <div class="collapse navbar-collapse  justify-content-end"  id="navbarSupportedContent"  [class.collapse]="isCollapsed">
+                                    <ul class="navbar-nav nav_main" >                                           
+                                        <li><a routerLink="/features">Features</a></li>
+                                        <li><a routerLink="/roadmap">Roadmap</a></li>
+                                        <li><a routerLink="/tools">Tools</a></li>
+                                        <li><a routerLink="/faq">FAQ</a></li>
+                                        <!-- <li><a tooltipPosition="bottom"   pTooltip="Coming Soon" href="#" class="btn">Exchange</a></li>
+                                        <li><a tooltipPosition="bottom"   pTooltip="Coming Soon"  href="#" class="btn">Download App</a></li> -->
+                                        <li class="btn_li" *ngIf="userservice.isLoggedIn()" ><a  routerLink="/dashboard"  class="btn">Dashboard</a></li>
+                                        <li class="btn_li" ><my-modals [text]="'Login'"></my-modals></li>
+                                </ul>
+                       </div>
+                    </nav> 
+                </header> 
+        </div>
+        <div class="allInfo" *ngSwitchCase="'dashboard'">
+                <header class="headerdash">         
+                        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+                        <button class="navbar-toggler navbar-toggler-right with_pro" type="button" data-toggle="collapse" (click)="isCollapsed = !isCollapsed" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                        <!-- <a class="navbar-brand for_desk"  routerLink="/"><img src="{{dirPath}}/assets/images/logo.png"></a> -->
+                        <a class="navbar-brand for_desk"  routerLink="/"><img src="./assets/images/logo.png"></a>
+                        <!-- <a class="navbar-brand for_mobile collapsed"  routerLink="/"><img src="{{dirPath}}/assets/images/logo_s.png"></a> -->
+                        <a class="navbar-brand for_mobile collapsed"  routerLink="/"><img src="./assets/images/logo_s.png"></a>
+                        <div class="collapse navbar-collapse  justify-content-end" id="navbarSupportedContent" [class.collapse]="isCollapsed">
+                                <ul class="navbar-nav nav_main">
+                                        <li class="btn_li"><a href="/assets/whitepaper/cryptoxygen.pdf" target="_blank" class="btn btn_blue">Whitepaper</a></li>
+                                        <li class="btn_li"><a routerLink="/tutorial" class="btn btn_red">Tutorial</a></li>          
+                                </ul>
+                                <ul class="rightMenu">  
+                                <!-- <div class="btn-group" dropdown>
+                                        <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                                                aria-controls="dropdown-basic">
+                                        Button dropdown <span class="caret"></span>
+                                        </button>
+                                        <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                                        role="menu" aria-labelledby="button-basic">
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+                                        <li class="divider dropdown-divider"></li>
+                                        <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a>
+                                        </li>
+                                        </ul>
+                                </div> -->
+                                <div class="dropdown anim-drop Profile_sec algn-div" dropdown>
+                                        <a aria-expanded="false" role="button" data-toggle="dropdown" class="dropdown-toggle" dropdownToggle>Welcome<strong>{{ userservice.currentUser.name }}</strong> <b class="caret"></b></a>
+                                        <ul *dropdownMenu class="dropdown-menu dropdown-profile show">
+                                        <li><a routerLink="/account">KYC</a></li>
+                                        <li><a routerLink="/dashboard">Dashboard</a></li>
+                                        <li><a routerLink="/feedback">Feedback</a></li>
+                                        <li><a target="_blank" routerLink="/contact">Contact Us</a></li>
+                                        <li><a routerLink="/settings">Settings</a></li>
+                                        <li><a (click)="userservice.logout()">Logout</a></li>
+                                        </ul>
+                                </div>                                     
+                            </ul>
+                       </div>
+                    </nav> 
+                </header>
+        </div>
+</div> 

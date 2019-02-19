@@ -1,0 +1,193 @@
+<p-growl [(value)]="msgs"></p-growl>
+
+<div [ngSwitch]="coin">
+ 
+<!-- ETH COIN  -->
+            <div class="container-fluid wega_tokenblk" *ngSwitchCase="'ETH'">
+  
+                <div class="container">
+                      <div class="white_Bg">
+                  <div class="token_sec">
+                        <h2>Buy Token With</h2>
+                        <ul>
+                            <li [ngClass]="coin"><a (click)="eth()" class="btn"><span>Ethereum</span></a> </li>
+                            <!-- <li [ngClass]="coin"><a (click)="btc()" class="btn"><span class="bit_icon">Bitcoin</span></a></li> -->
+                            <!-- <li [ngClass]="coin"><a (click)="ltc()" class="btn"><span class="lite_icon">Litecoin</span></a></li> -->
+                            <li [ngClass]="coin" class="disabled_fld">
+                                <!-- <div class="overlay">Temporarily Disabled</div> -->
+                                <a (click)="credit(userservice.currentUser.id)" class="btn"><span class="card_icon">Credit Card</span></a></li>
+                        </ul>
+                        <div class="token_sec_in">
+                            <span style="color: #6bafff;font-size: 14px;">Your OXY2 token balance</span>
+                            <h4>{{userrotalvgw | number:'1.1-5'}} OXY2</h4>
+                            <p>
+                                <span>~{{ethcount | number:'1.1-4'}} ETH</span>
+                                <!-- <span>~{{btccount | number:'1.1-4'}} BTC</span> -->
+                                <!-- <span>~{{ltccount | number:'1.1-4'}} LTC</span> -->
+                                <span>~{{usdcount | number:'1.1-4'}} USD</span>
+                            </p>
+                        </div> 
+                  </div>
+                 
+                  <div class="info_sec">
+                          <h3>
+                          <span>Current price</span><br>
+                          1 ETH=  {{coinprice | number:'1.1-3'}} OXY2</h3>
+                         
+                          <app-coinmodal [coin]="'ETH'" >                           
+                          </app-coinmodal>
+
+                          <app-pricetimer class="pricetimer" [coin]="'eth'"></app-pricetimer>
+                          
+                          <app-smartcontract></app-smartcontract>
+                          </div>
+                      </div>
+                  </div> 
+                    <app-erc></app-erc>
+                    <app-history></app-history>
+              </div>
+<!-- ETH COIN END -->
+               
+ <!-- BTC COIN -->
+                <div class="container-fluid wega_tokenblk" *ngSwitchCase="'BTC'">
+                    <div class="container">
+                          <div class="white_Bg">
+                      <div class="token_sec">
+                              <h2>Buy Token With</h2>  
+                          
+                          <ul>
+                                <li [ngClass]="coin"><a (click)="eth()" class="btn"><span>Ethereum</span></a> </li>
+                                <!-- <li [ngClass]="coin"><a (click)="btc()" class="btn"><span class="bit_icon">Bitcoin</span></a></li> -->
+                                <!-- <li [ngClass]="coin"><a (click)="ltc()" class="btn"><span class="lite_icon">Litecoin</span></a></li> -->
+                                <li [ngClass]="coin" class="disabled_fld">
+                                    <!-- <div class="overlay">Temporarily Disabled</div> -->
+                                    <a (click)="credit(userservice.currentUser.id)" class="btn"><span class="card_icon">Credit Card</span></a></li>
+                            </ul>
+                            <div class="token_sec_in">
+                                <span style="color: #6bafff;font-size: 14px;">Your OXY2 token balance</span>
+                                <h4>{{userrotalvgw | number:'1.1-5'}} OXY2</h4>
+                                <p>
+                                    <span>~{{ethcount | number:'1.1-4'}} ETH</span>
+                                    <!-- <span>~{{btccount | number:'1.1-4'}} BTC</span> -->
+                                    <!-- <span>~{{ltccount | number:'1.1-4'}} LTC</span> -->
+                                    <span>~{{usdcount | number:'1.1-4'}} USD</span>
+                                </p>
+                            </div> 
+                                
+                      </div>
+                      <div class="info_sec">
+                              <h3>
+                              <span>Current price</span><br>
+                              1 BTC= {{coinprice | number:'1.1-3'}} OXY2</h3>
+                             
+                              <app-coinmodal [coin]="'BTC'" >                           
+                              </app-coinmodal>
+                              <app-pricetimer class="pricetimer" [coin]="'btc'"></app-pricetimer>
+                              <app-smartcontract></app-smartcontract>
+                              </div>
+                          </div>
+                      </div>
+                      <app-erc></app-erc>
+                      <app-history></app-history>
+                  </div>
+<!-- BTC COIN END -->
+
+
+<!-- LTC COIN -->
+                <div class="container-fluid wega_tokenblk" *ngSwitchCase="'LTC'">
+                        <div class="container">
+                            <div class="white_Bg">
+                        <div class="token_sec">
+                                <h2>Buy Token With</h2>  
+                            
+                                <ul>
+                                    <li [ngClass]="coin"><a (click)="eth()" class="btn"><span>Ethereum</span></a> </li>
+                                    <!-- <li [ngClass]="coin"><a (click)="btc()" class="btn"><span class="bit_icon">Bitcoin</span></a></li> -->
+                                    <!-- <li [ngClass]="coin"><a (click)="ltc()" class="btn"><span class="lite_icon">Litecoin</span></a></li> -->
+                                    <li [ngClass]="coin"  class="disabled_fld">
+                                            <!-- <div class="overlay">Temporarily Disabled</div> -->
+                                            <a (click)="credit(userservice.currentUser.id)" class="btn"><span class="card_icon">Credit Card</span></a></li>
+                                </ul>
+                                <div class="token_sec_in">
+                                    <span style="color: #6bafff;font-size: 14px;">Your OXY2 token balance</span>
+                                    <h4>{{userrotalvgw | number:'1.1-5'}} OXY2</h4>
+                                    <p>
+                                        <span>~{{ethcount | number:'1.1-4'}} ETH</span>
+                                        <!-- <span>~{{btccount | number:'1.1-4'}} BTC</span> -->
+                                        <!-- <span>~{{ltccount | number:'1.1-4'}} LTC</span> -->
+                                        <span>~{{usdcount | number:'1.1-4'}} USD</span>
+                                    </p>
+                                </div> 
+                              
+                        </div>
+                        <div class="info_sec">
+                                <h3>
+                                <span>Current price</span><br>
+                                1 LTC= {{coinprice | number:'1.1-3'}} OXY2</h3>
+                               
+                                <app-coinmodal [coin]="'LTC'" >                       
+                                </app-coinmodal>
+
+                                <app-pricetimer class="pricetimer" [coin]="'ltc'"></app-pricetimer>
+
+                                
+                                <app-smartcontract></app-smartcontract>
+                                </div>
+                            </div>
+                        </div>
+                        <app-erc></app-erc>
+                        <app-history></app-history>
+                    </div>
+<!-- LTC COIN END -->
+               
+
+<!-- CREDIT CARD COIN START -->
+                <div class="container-fluid " *ngSwitchCase="'CREDIT'">
+                        <div class="container">
+                            <div class="white_Bg">
+                                    <div class="token_sec">
+                                            <h2>Buy Token With</h2>  
+                                        
+                                        <ul>
+                                                <li [ngClass]="coin"><a (click)="eth()" class="btn"><span>Ethereum</span></a> </li>
+                                                <!-- <li [ngClass]="coin"><a (click)="btc()" class="btn"><span class="bit_icon">Bitcoin</span></a></li> -->
+                                                <!-- <li [ngClass]="coin"><a (click)="ltc()" class="btn"><span class="lite_icon">Litecoin</span></a></li> -->
+                                                <li [ngClass]="coin"  class="disabled_fld">
+                                                    <!-- <div class="overlay">Temporarily Disabled</div> -->
+                                                    <a (click)="credit(userservice.currentUser.id)" class="btn"><span class="card_icon">Credit Card</span></a></li>
+                                            </ul>
+                                            <div class="token_sec_in">
+                                                <span style="color: #6bafff;font-size: 14px;">Your OXY2 token balance</span>
+                                                <h4>{{userrotalvgw | number:'1.1-5'}} OXY2</h4>
+                                                <p>
+                                                    <span>~{{ethcount | number:'1.1-4'}} ETH</span>
+                                                    <!-- <span>~{{btccount | number:'1.1-4'}} BTC</span> -->
+                                                    <!-- <span>~{{ltccount | number:'1.1-4'}} LTC</span> -->
+                                                    <span>~{{usdcount | number:'1.1-4'}} USD</span></p>
+                                            </div> 
+                                            <p><b>Note:All credit card Transactions are disabled at this time. Our team will keep you updated on any changes.</b> </p>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="white_Bg">
+                                    <div class="walletAdd_sec">
+                                        <h2>ERC 20 Wallet Address (Ethereum)</h2>  
+                                        <p>Enter the ERC20 compatible wallet address that you will use to send and receive OXY2 tokens</p> 
+                                        <form class="address_form">
+                                            <input placeholder="Type Here" value="" type="text" />
+                                            <button class="btn btn-default" type="submit">Submit</button>
+                                            
+                                        </form>
+                                    </div>
+
+                            </div>
+                        </div>
+                        <app-erc></app-erc>
+                        <app-history></app-history>
+                       
+                    </div>
+ <!-- CREDIT CARD COIN END -->
+
+</div>

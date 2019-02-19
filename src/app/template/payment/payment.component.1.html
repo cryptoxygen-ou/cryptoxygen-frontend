@@ -1,0 +1,63 @@
+<p-growl [(value)]="msgs"></p-growl>
+
+<div class="container-fluid wega_pmnt">
+  <div class="container">
+      <div id="bestrate-widget"></div>
+          <div *ngIf="!besRateEnabled" class="white_Bg">
+              <div class="container crd_pmnt">
+                <h2>Buy OXY2 token by Credit Card Payment</h2>  
+
+                <div class="cal_box btn-group" style="vertical-align: middle;">
+                  <span>$</span><input (change)="change()" (keyup)="change1()" [(ngModel)]="usd" name="usd" type="text"placeholder="" class="form-control"> <span class="red_txt">=</span> <input [(ngModel)]="vgw" name="vgw" (change)="change()" (keyup)="change2()" type="text"placeholder="" class="form-control"><span> OXY2 </span> 
+                </div>  
+                
+                <div id="sq-ccbox">
+                    <!--
+                      You should replace the action attribute of the form with the path of
+                      the URL you want to POST the nonce to (for example, "/process-card")
+                    -->
+                    <form id="nonce-form" #f="ngForm" (ngSubmit)="pay(f)">
+                      <span class="pay_err" id="pay_err"></span>
+                      <span class="pay_succ" id="pay_succ"></span>
+                      <table class="table">
+                      <tbody>
+                        <tr>
+                          <td>Card Number:</td>
+                          <td><div id="sq-card-number" class="card_input"></div></td>
+                        </tr> 
+                        <tr>
+                          <td>CVV:</td>
+                          <td><div id="sq-cvv" class="card_input"></div></td>
+                        </tr>
+                        <tr>
+                          <td>Expiration Date: </td>
+                          <td><div id="sq-expiration-date" class="card_input"></div></td>
+                        </tr>
+                        <tr>
+                          <td>Postal Code:</td>
+                          <td><div id="sq-postal-code" class="card_input"></div></td>
+                        </tr>
+                        <tr>
+                          <td colspan="2">
+                              <input [disabled]="paybtnStatus" type="submit" id="formsubmit" class="btn btn-buy" value="Continue" style="display:none;width:100%">
+                            <button id="sq-creditcard" class="button-credit-card" onclick="requestCardNonce(event)">
+                              Pay with card
+                            </button>
+                            <a routerLink="/dashboard" class="button-credit-cancel">
+                              Cancel
+                            </a>
+                            
+                          </td>
+                        </tr>
+                      </tbody>
+                      </table>
+                  
+                      <!--
+                        After a nonce is generated it will be assigned to this hidden input field.
+                      -->
+                      <input type="hidden" name="nounce"  id="card-nonce" >
+                    </form>
+                  </div>
+           </div>
+
+  </div>

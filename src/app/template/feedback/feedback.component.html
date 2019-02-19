@@ -1,0 +1,62 @@
+<p-growl [(value)]="msgs"></p-growl>
+<div>
+ 
+    <!-- ETH COIN ----------------------------     -->
+                <div class="container-fluid nopadd">
+      
+                    <div class="container nopadd">
+                        <div class="col-xs-12 col-sm-9 feedback_sec">
+                          <div class="white_Bg">
+                      <div class="customr">
+                              <h2 class="basetext">Feedback</h2> 
+                            
+
+
+                          <div class="token_sec_in">
+                              <div class="col-md-12 nopadd mx-auto">
+                                  <form #f= "ngForm" (ngSubmit)="submit(f)" enctype="multipart/form-data">
+                                      <div class="form-group row">
+                                          <div class="col-sm-12">
+                                             
+                                              <label for="firstname">Title*</label>
+                                              <input required ngModel minlength="2" name = "title"  #title ="ngModel" type="text" class="form-control" placeholder="Title">
+                                              <p class="text-danger" *ngIf="title.touched && title.invalid">
+                                                <span *ngIf = "title.errors.required" >Title Is Required</span>
+                                                <span *ngIf = "title.errors.minlength" >Minimum {{title.errors.minlength.requiredLength}}  chracter Is required</span>
+                                              </p>
+                                          </div>
+                                     
+                                      </div>
+
+                                      <div class="form-group row">
+                                        <div class="col-sm-12">
+                                           
+                                            <label for="firstname">Comment*</label>
+                                            <textarea rows="8" required ngModel minlength="2" name = "comment"  #comment ="ngModel" type="text" class="form-control" placeholder="Comment "></textarea>
+                                            <p class="text-danger" *ngIf="comment.touched && comment.invalid">
+                                              <span *ngIf = "comment.errors.required" >Comment Is Required</span>
+                                              <span *ngIf = "comment.errors.minlength" >Minimum {{comment.errors.minlength.requiredLength}}  chracter Is required</span>
+                                            </p>
+                                        </div>
+                                   
+                                    </div>
+                                     
+                                      <div class="form-group row">
+                                          
+                                          <div class="col-sm-6">
+                                            <button  [disabled] = "f.invalid"  type="submit" class="btn btn-primary submitbutton px-4">Submit</button>
+                                          </div>
+                                      </div>
+                                     
+                                  </form>
+                              </div>
+                          </div> 
+                        </div>
+                   </div>
+                </div>
+                   <!-- ETH COIN END ----------------------------     -->
+                  
+    
+    </div>
+    
+    

@@ -1,0 +1,177 @@
+.white_Bg {
+	background: #fff;
+	border-radius: 15px;
+	padding: 40px;
+	margin-bottom: 30px;
+	min-height: 340px;
+	float: left;
+	width: 100%;
+}
+.token_sec_in {
+	width: 100%;
+	float: left;
+	.mx-auto{
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.form-group{
+		@media(max-width:767px){
+			margin-bottom: 0px !important;
+			.inpt_flds{
+				margin-bottom: 15px;
+			}
+
+		}
+	}
+}
+.customr{ 
+	width: 100% !important;
+	h2{
+		font-size: 32px;
+		color: #6bafff;
+		font-weight: 600;
+		@media(max-width:767px){
+			font-size: 24px;
+		}
+	}
+	h5{
+		margin-bottom: 20px;
+		@media (max-width:767px){
+			font-size: 16px !important;
+		}
+	}
+}
+.country_code_block {
+	display: table;
+	width: 100%;
+	.left_block {
+		display: table-cell;
+		width: 100px;
+		float: none;
+		vertical-align: middle;
+	}
+	.right_block {
+		display: table-cell;
+		width: calc(100% - 100px);
+		float: none;
+		vertical-align: middle;
+		padding-left: 10px;
+	}
+}
+.upld_doc {
+	position: relative;
+	margin-bottom: 10px;
+	.fa-info-circle {
+		position: absolute;
+		right: 15px;
+		top: 50%;
+		transform: translateY(-50%);
+		color: #6bafff;
+		cursor: pointer;
+	}
+	.popover {
+		.popover-content {
+			img {
+				max-width: 100%;
+			}
+		}
+	}
+}
+.fa-info-circle {
+	color: #6bafff;
+	cursor: pointer;
+}
+
+.popover {
+	.popover-content {
+		img {
+			max-width: 100%;
+		}
+	}
+}
+.kyc_btn_sec {
+	padding: 0px;
+	li {
+		display: inline-block;
+		margin-right: 15px;
+		&:last-child {
+			margin-right: 0px;
+		}
+		.cancelbutton {
+			background-color: #666666;
+			color: #fff;
+			padding: 9px;
+			border-radius: 100px;
+			border-color: #666666;
+			&:hover, &:focus, &:active {
+				color: #fff;
+				background-color: #333333;
+			}
+		}
+	}
+}
+
+.token_sec_in {
+	display: table;
+	@media (max-width:767px) {
+		margin: 0px; 
+	}
+	.token_sec_left {
+		width: calc(100% - 300px);
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+		@media (max-width:767px) {
+			width: 100%;
+		}
+		@media (max-width:500px) {
+			float: left;
+			width: 100%;
+		}
+		.token_sec_left_contnt {
+			display: table;
+			width: 100%;
+			.google_auth_img_sec {
+				position: relative;
+				display: table-cell;
+				vertical-align: middle;
+				width: 70px;
+				float: none;
+				.google_auth_img {
+					background-color: #f1f2ed;
+					border-radius: 100px;
+					width: 70px;
+					height: 70px;
+				}
+			}
+			.google_auth_info {
+				padding-left: 15px;
+				display: table-cell;
+				vertical-align: middle;
+				float: none;
+				p {
+					margin-bottom: 0px;
+				}
+			}
+
+		}
+	}
+	.token_sec_right {
+		width: 300px;
+		text-align: right;
+		display: table-cell;
+		vertical-align: middle;
+		float: none;
+		@media (max-width:500px) {
+			float: left;
+			width: 100%;
+			text-align: left;
+			margin-top: 30px;
+		}
+		.enable_btn_sec {
+			.btn {
+				display: inline-block;
+			}
+		}
+	}
+}

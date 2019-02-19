@@ -1,0 +1,30 @@
+<button (click)="openModal(googleModal)" class="btn right_btn">Disable</button>
+
+
+
+<ng-template #googleModal>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-body">
+      <div class="mb-hdr"><h4>Disable Google Authentication</h4></div>
+      <div class="form-group qr-code" style="margin-bottom: 0px;" >
+        <!-- <img [src]="qrImage"> -->
+      </div>
+
+      <form #f="ngForm" (ngSubmit)="disable(f)" >
+      <div class="form-group">
+        <input required ngModel minlength="2" name ="token"  #token ="ngModel" type="text" class="form-control" placeholder="Token">
+        <p class="text-danger" *ngIf="token.touched && !token.valid">
+          <span *ngIf = "token.errors.required" >Token Is Required</span>
+          <span *ngIf = "token.errors.minlength" >Minimum {{token.errors.minlength.requiredLength}}  chracter is required</span>
+        </p>
+      </div>      
+      <div class="form-group">
+          <button [disabled]="!f.valid" type="submit" class="btn btn red_btn update">Update</button>
+      </div>
+      </form>
+
+         
+    </div> 
+</ng-template> 

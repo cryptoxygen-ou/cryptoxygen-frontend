@@ -1,0 +1,261 @@
+<p-growl [(value)]="msgs"></p-growl>
+
+<div class="container-fluid wega_pmnt">
+  <div class="container"> 
+    <div   class="white_Bg">
+      <div class="container crd_pmnt">
+          <h2>Buy OXY2 token by Credit Card Payment</h2>  
+          <div class="cal_box btn-group" style="vertical-align: middle;margin-bottom:17px;">
+              <span>$</span><input (change)="change()" (keyup)="change1()" [(ngModel)]="usd" name="usd" type="text"placeholder="" class="form-control"> <span class="red_txt">=</span> <input [(ngModel)]="vgw" name="vgw" (change)="change()" (keyup)="change2()" type="text"placeholder="" class="form-control"><span> OXY2 </span> 
+            </div>  
+          <div *ngIf="!besRateEnabled" class="payment1">
+              <form  #f="ngForm" (ngSubmit)="pay(f)">                    
+                <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Card Number:</td>
+                    <td> 
+                      <input 
+                      #card_no ="ngModel"
+                      name="card_no" 
+                      ngModel 
+                      id="card_no" 
+                      type="text" 
+                      class="form-control"
+                      required
+                      >
+                    
+                      <p class="text-danger" *ngIf="card_no.touched && !card_no.valid">
+                        <span *ngIf = "card_no.errors.required" >Card Number is required</span> 
+                        
+                      </p>
+                  </td>
+                  </tr> 
+                  <tr>
+                    <td>CVV:</td>
+                    <td>
+                      <input 
+                      #card_cvv ="ngModel"
+                      name="card_cvv" 
+                      ngModel 
+                      id="card_cvv"
+                      type="text" 
+                      class="form-control"
+                      required
+                      >
+                      <p class="text-danger" *ngIf="card_cvv.touched && !card_cvv.valid">
+                          <span *ngIf = "card_cvv.errors.required" >CVV is required</span> 
+                          
+                        </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Expiration Date: </td>
+                    <td>
+                      <div style="
+                      float: left;
+                      width: 100%;
+                      display: inline-flex;
+                  ">
+                      
+                      <select 
+                      #exp_date_mm ="ngModel"
+                      name="exp_date_mm" 
+                      ngModel 
+                      id="exp_date_mm" 
+                      class="form-control"
+                        required
+                        style="width:25%;margin-right: 13px;"
+                        >
+                        <option value="">MM</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                      </select>
+                      <select 
+                      #exp_date_yy ="ngModel"
+                      name="exp_date_yy" 
+                      ngModel 
+                      id="exp_date_yy"
+                      class="form-control" 
+                      required
+                      style="width:25%; "
+                      >
+                          <option value="">YY</option>
+                          <option *ngFor="let year of years">{{year}}</option>
+                        </select>
+                      </div>
+
+
+
+
+                        <p class="text-danger" *ngIf="(exp_date_yy.touched && !exp_date_yy.valid) || (exp_date_mm.touched && !exp_date_mm.valid)">
+                            <span *ngIf = "exp_date_yy.errors.required || exp_date_mm.errors.required" >Card expire date is required</span> 
+                            
+                          </p>
+                    </td>
+                  </tr>
+                  <tr>
+                      <td>Cardholder Name:</td>
+                      <td> <input 
+                        #card_holder_name ="ngModel"
+                        name="card_holder_name" 
+                        ngModel 
+                        id="card_holder_name" 
+                        type="text" class="form-control" required>
+                        <p class="text-danger" *ngIf="card_holder_name.touched && !card_holder_name.valid">
+                            <span *ngIf = "card_holder_name.errors.required" >Cardholder name is required</span> 
+                            
+                          </p>
+                      
+                      </td>
+                    </tr> 
+                  <tr>
+                      <td>Card Type:</td>
+                      <td>
+                          <select 
+                          #card_type ="ngModel"
+                          name="card_type" 
+                          ngModel 
+                          id="card_type"
+                          class="form-control" required>
+                          <option value="">Type</option>
+                          <option value="American Express">American Express</option>
+                          <option value="Visa">Visa</option>
+                          <option value="Mastercard">Mastercard</option>
+                        <option value="JCB">JCB</option>
+                        <option value="Diners Club">Diners Club</option>
+                        <option value="Discover">Discover</option>
+                        </select>
+                        <p class="text-danger" *ngIf="card_type.touched && !card_type.valid">
+                            <span *ngIf = "card_type.errors.required" >Card type is required</span> 
+                            
+                          </p>
+                      
+                      </td>
+                    </tr>
+
+                  <tr>
+                    <td>Postal Code:</td>
+                    <td><input  
+                      #zipcode ="ngModel"
+                      name="zipcode" 
+                      ngModel 
+                      id="zipcode"
+                        type="text" required
+                        class="form-control">
+                      
+                        <p class="text-danger" *ngIf="zipcode.touched && !zipcode.valid">
+                          <span *ngIf = "zipcode.errors.required" >Zipcode is required</span> 
+                          
+                        </p>
+                      </td>
+                  </tr>
+                  
+                    <tr>
+                        <td>Street:</td>
+                        <td><input 
+                          #street ="ngModel"
+                          name="street" 
+                          ngModel 
+                          id="street"
+                            type="text" 
+                            class="form-control" 
+                            required
+                            >
+                            <p class="text-danger" *ngIf="street.touched && !street.valid">
+                              <span *ngIf = "street.errors.required" >Street is required</span> 
+                              
+                            </p>
+                          </td>
+                      </tr>
+                      <tr>
+                          <td>City:</td>
+                          <td><input 
+                            #city ="ngModel"
+                            name="city" 
+                            ngModel 
+                            id="city"
+                              type="text" 
+                              required
+                              class="form-control">
+                            
+                              <p class="text-danger" *ngIf="city.touched && !city.valid">
+                                <span *ngIf = "city.errors.required" >City is required</span> 
+                                
+                              </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>State:</td>
+                            <td><input
+                                #state ="ngModel"
+                              name="state" 
+                              ngModel 
+                              id="state"
+                                type="text" 
+                                class="form-control"
+                                required
+                                >
+                                <p class="text-danger" *ngIf="state.touched && !state.valid">
+                                  <span *ngIf = "state.errors.required" >State is required</span> 
+                                  
+                                </p>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td>Country:</td>
+                              <td><input 
+                                #country ="ngModel"
+                                name="country" 
+                                ngModel 
+                                id="country"
+                                  type="text" 
+                                  class="form-control"
+                                  required
+                                  >
+                                  <p class="text-danger" *ngIf="country.touched && !country.valid">
+                                    <span *ngIf = "country.errors.required" >Country is required</span> 
+                                    
+                                  </p>
+                                </td>
+                            </tr>
+
+
+                  <!-- <tr>
+                    <td colspan="2">
+                        <input [disabled]="paybtnStatus || !f.valid" type="submit"  class="btn btn-buy" value="Continue" style="
+                        margin: 0px !important;
+                        display: inline-block;
+                    ">
+                    
+                      <a routerLink="/dashboard" class="button-credit-cancel">
+                        Cancel
+                      </a>
+                      
+                    </td>
+                  </tr> -->
+                </tbody>
+                </table>
+            
+                
+              
+              </form>
+          
+      </div>
+    </div>
+    <div class="payment2" *ngIf="besRateEnabled">
+      <div   id="bestrate-widget"></div>
+    </div>
+  </div>
+  </div>
+</div>

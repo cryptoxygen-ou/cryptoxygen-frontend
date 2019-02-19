@@ -1,0 +1,29 @@
+<p>OXY2 Smart Contract Address <a (click)="openModal(smart)" style="cursor:pointer"  data-toggle="tooltip" data-placement="top" title="OXY2 Smart Contract Address.">
+    <img  src="./assets/images/info_icon.png" alt="img" width="17" height="17"></a></p> 
+
+
+
+    <ng-template #smart>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+          </button>
+          <div class="modal-body">
+              <div class="modal-header">
+                <h4>OXY2 Smart Contract Address</h4>
+              </div>
+                <div class="inner_style">
+                <p>Address</p>          
+                  <span class="myaddress" ></span>
+                
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span (click)="copyToClipboard()" ngxClipboard [cbContent]="textToCopy" class="input-group-text add_btn" id="basic-addon3">{{copytext}}</span>
+                    </div>
+                    <input type="text" class="form-control basic_url" [value]="address" id="basic-url" aria-describedby="basic-addon3">
+                  
+                  </div>
+
+              </div>
+              
+        </div>
+      </ng-template> 

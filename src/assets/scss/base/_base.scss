@@ -1,0 +1,179 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+html {
+	position: relative;
+	width: 100%;
+	float: left;	
+	min-height: 100%;
+}
+
+body {
+	background: #ffffff;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 400;
+	padding-bottom: 68px;
+	height: 100%;
+	float: left;
+	width: 100%;
+	&.modal-open {
+		position: fixed;
+	}
+	@media (max-width:1172px) {
+		padding-bottom: 100px;
+	}
+	@media (max-width:991px) {
+		padding-bottom: 91px;
+	}
+	@include breakpoint(small) {
+		padding-bottom: 119px;
+	}
+	@media (max-width:637px) {
+		padding-bottom: 141px;
+	}	
+	@include breakpoint(x-small) {
+		padding-bottom: 141px;
+	}
+	@media (max-width:368px) {
+		padding-bottom: 164px;
+	}	
+	
+}
+button:focus {
+	outline: none;
+}
+h1, h2, h3, h4, h5, h6, p, a {
+	font-weight: 400;
+	margin: 0px;
+	padding: 0px;
+}
+:focus {
+	outline:none;
+}
+a{
+	text-decoration: none;
+}			
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+input, textarea {
+	box-shadow: none;
+}
+// input, textarea {
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+//   appearance: none;
+// }
+.form-control{
+	background: transparent;
+}
+.container{
+	max-width:1170px;
+	width: 100%;
+	margin: 0px auto;
+}
+textarea{
+	resize: none;
+}
+.btn{
+	padding: 13px 35px;
+	font-size: 16px;
+	display: inline-block;
+	font-weight: 500;
+	color: #fff;
+	font-family: 'Montserrat', sans-serif;
+	background: #6bafff;
+	@include border-radius(100px);
+	@include breakpoint (xlarge){
+		padding: 13px 24px;
+	}
+	&:hover, &:focus, &:active {
+		color: #fff;
+		background: #569aea;
+	}
+}
+.banner-inner{
+    align-items: center;
+	margin-bottom: 78px;
+	@media(max-width:991px){
+		min-height: 250px;
+	}
+	@media(max-width:767px){
+		min-height: 142px !important;
+		margin-bottom: 25px;
+	}
+
+    h2 {
+		font-size: 35px;
+		text-transform: uppercase;
+		font-weight: 700; 
+		color: #fff;
+		@media(max-width:991px){
+			font-size: 30px;			
+		}
+	   	@media(max-width:767px){
+			font-size: 22px;			
+			line-height: 23px;			
+		}
+    }
+}
+.title {
+	h2 {		
+		@media(max-width:991px){
+			font-size: 30px;			
+		}
+	   	@media(max-width:767px){
+			font-size: 22px;			
+			line-height: 23px;
+		}
+	}
+}
+.heading, .sign-up-title {		
+	@media(max-width:991px){
+		font-size: 30px;			
+	}
+	   @media(max-width:767px){
+		font-size: 22px;			
+		line-height: 23px;
+	}	
+}
+.banner-inner {
+    height: 350px;
+    overflow: hidden;
+    min-height: auto !important;
+    display: block !important;
+	position: relative;
+	background-color: #000000;
+    @include breakpoint(small) {
+        height: 250px;
+    }
+    #wave_div {
+        width: 100%;
+		float:left;
+		box-sizing: border-box;
+		border: solid 1px #000;
+		background-color: #000;
+        canvas {
+            height: 414px !important;
+            position: relative;
+            z-index: 0;
+            @include breakpoint(small) {
+                height:307px !important;
+            }
+        }
+    }
+    h2 {
+        position: absolute;
+        top:50%;
+        left: 50%;
+        @include transform(translate(-50%, -50%));
+        z-index: 3;
+    }
+}
+.basetext{
+	color: $red_heading;
+}

@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="white_Bg" style="min-height: initial;">
+            <div class="walletAdd_sec">
+                <h2>ERC 20 Wallet Address (Ethereum)</h2>
+                <p>Enter the ERC20 compatible wallet address that you will use to send and receive OXY2 tokens</p> 
+                <form #erc = "ngForm" (ngSubmit)="submit(erc)" class="address_form">
+                    <input required [(ngModel)]="addressdata.address" name = "address" #address ="ngModel" placeholder="wallet address*" value="" type="text" />
+                    <p class="text-danger" *ngIf="address.touched && !address.valid">
+                        <span *ngIf = "address.errors.required" >Address Is Required</span>
+                      </p>
+                    <button [disabled] = "!erc.valid" class="btn btn-default" type="submit">Submit</button>
+                    
+                </form>
+            </div>
+
+    </div>
+</div>

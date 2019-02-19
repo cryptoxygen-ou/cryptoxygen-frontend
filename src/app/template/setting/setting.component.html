@@ -1,0 +1,45 @@
+<p-growl [(value)]="msgs"></p-growl>
+<div>
+    <div class="container-fluid nopadd">
+        <div class="container">
+            <div class="white_Bg">
+                <div class="customr">
+                    <h2>Settings</h2> 
+                    <div class="token_sec_in" style="border-bottom:1px solid #d4f2fc;    padding: 20px 0;">
+                        <div class="token_sec_left">
+                            <div class="token_sec_left_contnt">
+                                <div class="google_auth_img_sec">
+                                    <div class="google_auth_img">
+                                            <div class="google icons_cmn" style="position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%,-50%);transform: translate(-50%,-50%);">
+                                            <i class="fa fa-google" aria-hidden="true"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="google_auth_info">
+                                    <div class="mid_content_wrap">
+                                        <div class="heading">
+                                            <h5 style="color: #645957;margin-bottom: 4px;">Google Authentication</h5>
+                                        </div>
+                                        <div class="heading_text" style="color: #999;">
+                                            <p style="font-size: 14px;">Used for withdrawals and security modifications.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="token_sec_right">
+                            <div class="enable_btn_sec">
+                                <app-google-auth class="gp-btn" *ngIf="!isAuth">
+                                    <button class="btn right_btn" style="background-color: #f1f2ed;color: #999;padding: 5px 22px;border-radius: 0;min-width: 135px;border: 0;">Enable</button>
+                                </app-google-auth>
+                                <app-google-auth-dis class="gp-btn" *ngIf="isAuth">
+                                    <button class="btn right_btn" style="background-color: #f1f2ed;color: #999;padding: 5px 22px;border-radius: 0;min-width: 135px;border: 0;">Disable</button>
+                                </app-google-auth-dis>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

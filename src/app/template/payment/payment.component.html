@@ -1,0 +1,55 @@
+<p-growl [(value)]="msgs"></p-growl>
+<div class="container-fluid wega_pmnt">
+    <div class="container">
+        <div class="white_Bg">
+            <h2>Buy OXY2 token by Credit Card Payment</h2>  
+            <div class="cal_box btn-group" style="vertical-align: middle;margin-bottom:17px;vertical-align: middle;margin-bottom: 17px;
+            border: 1px solid #eee;padding: 17px;background-color: #eee;">
+                <span>$</span><input (change)="change()" (keyup)="change1()" [(ngModel)]="usd" name="usd" type="text" placeholder="" class="form-control"> <span class="red_txt">=</span> <input [(ngModel)]="vgw" name="vgw" (change)="change()" (keyup)="change2()" type="text"placeholder="" class="form-control"><span> OXY2 </span> 
+            </div>  
+            <div class="row payment_sec">
+                <div class="col-xs-12 col-md-6 payment_info">
+                    <h2>Payment Instructions:</h2>
+                    <p>Get an extra <b style="color:#6bafff;">10% BONUS</b> on OXY2 Tokens. United States users must use this third party widget for Credit Card Transactions.</p>
+                    <p>
+                    <b> Step 1 -</b> Enter the purchase amount of OXY2 tokens you would like to buy in $USD and Euro.
+                    </p>
+                    <p>
+                    <b> Step 2 -</b> Please leave the «You Get» panel on ETH and click the Exchange button.
+                    </p>
+                    <p>
+                    <b>Step 3 -</b> Copy and Paste your OXY2 Ethereum Address below into the Recipient wallet address bar
+                    </p>
+                    <div style="margin-bottom:12px;" class="input-group-prepend">
+                        <span (click)="copyToClipboard()" ngxClipboard [cbContent]="textToCopy" class="input-group-text add_btn" id="basic-addon3">{{copytext}}</span>
+                        <input type="text" class="form-control basic_url" [value]="address" id="basic-url" aria-describedby="basic-addon3">
+                    </div>
+                  
+
+                    <p>
+                    <b> Step 4 -</b> After entering your OXY2 Ethereum Address please click continue
+                    </p>
+                    <p>
+                    <b>Step 5 -</b> This will take you to the Billing screen in order to pay with your credit card. Please abide by all of our third-party processors terms. Customers must also fill out all KYC information for their team as well. Approval is instant in most cases. 
+                    </p>
+                    <p>
+                    <b>Step 6 -</b> After your transaction is verified your OXY2 Tokens will appear in your dashboard account. Please save all third-party transaction information. By using this service, you agree to the risks associated with the purchase of cryptocurrency through this third party platform.
+                    </p>
+                  
+                </div>
+                <div class="col-xs-12 col-md-6 iframe_sec">
+                  
+                <!-- <iframe src="https://changelly.com/widget/v1?auth=email&from=USD&to=BTC&merchant_id=pcya76z6r7tncpbz&address=&amount=100&ref_id=pcya76z6r7tncpbz&color=cf0000" width="100%" height="500" class="changelly" scrolling="no" style="overflow-y: hidden; border: none" > Can't load widget </iframe> -->
+
+                <iframe src="https://old.changelly.com/widget/v1?auth=email&from=USD&to=ETH&merchant_id=e5e0uavpkh1cwvkm&address=&amount=100&ref_id=e5e0uavpkh1cwvkm&color=6bafff" width="100%" height="500" class="changelly" scrolling="no" style="overflow-y: hidden; border: none">Can't load widget</iframe>
+                <p style="text-align: center">
+                  Cryptoxygen appreciates your patience while using our third party payment processor. All payments are transferred from $USD and Euro to Ethereum in order to obtain your OXY2 tokens. 
+                </p>
+                <p style="text-align: center">Running into a problem?
+                Contact <a href="mailto:support@cryptoxygen.io" >support@cryptoxygen.io</a></p>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

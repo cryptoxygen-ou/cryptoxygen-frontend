@@ -1,0 +1,66 @@
+@import '../../../assets/scss/main.scss';
+.bgWhite{
+    background: #fff;
+}
+.faq{
+    padding-bottom: 50px;
+    ul{
+        margin-bottom: 25px;
+        padding-left: 0px;
+        list-style: none;
+        color: #626262;
+        font-size: 14px;
+        li{
+            margin-bottom: 5px;
+            &.icon_img {
+                    background-image: url("../../../assets/images/icon.png");
+                    background-repeat: no-repeat;
+                    background-position: top 2px left;
+                    padding-left: 31px;
+                    @include image-2x('../../../assets/images/icon@2x.png',
+                    16px,
+                    16px);
+                    float: left;
+                    width:100%;
+                }
+            }
+            strong{
+                max-width: 292px;
+                width:100%;
+                font-size: 15px;
+                color: #999999;
+                font-weight: 600;
+                display: inline-block;
+            }
+            span{
+                color: #999999;
+                font-size: 15px;
+            }
+        }
+    h2{
+        font-size: 30px;
+        color: #282828;
+        font-weight: 700;
+        margin-top: 50px;
+        margin-bottom: 14px;
+        display: block;
+    }
+    h3{
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 10px;
+        font-weight: 400;
+        display: block;
+    }
+    p{
+        font-size: 15px;
+        color: #999999;
+        margin-bottom: 20px;
+    }
+    h5 {
+        margin-bottom: 10px;
+        &.nxt-year{
+            margin-top: 5px;
+        }
+    }
+}

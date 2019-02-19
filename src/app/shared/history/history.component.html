@@ -1,0 +1,116 @@
+<div class="container">
+  <div class="white_Bg">
+     <h2>History</h2>  
+     <div>
+      <tabset class="comn_tabs">
+        <tab heading="ETH" id="tab1">
+            <div class="table-responsive">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th>Transaction Id</th>
+                  <!-- <th>Wallet Id</th> -->
+                  <th>From Address</th>
+                  <th>To Address</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let trans of ethtrans">
+                  <td> <a target="_blank" href="https://etherscan.io/tx/{{trans.txid}}"> {{trans.txid | slice : 0 :25 }}...</a></td>
+                  <!-- <td>{{trans.wallet_id}}</td> -->
+                  <td>{{trans.address_from}}</td>
+                  <td>{{trans.address_to}}</td>
+                  <td>{{trans.amount}}</td>
+                  <td>{{trans.status}}</td>
+                </tr>
+                
+              </tbody>
+          </table>
+          </div>
+        </tab>
+        <!-- <tab heading="BTC">
+          <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Transaction Id</th> 
+                    //<th>Wallet Id</th> already comment
+                    <th>From Address</th>
+                    <th>To Address</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let trans1 of btctrans">
+                    <td> <a target="_blank" href="https://www.blockchain.com/btc/tx/{{trans1.txid}}">{{trans1.txid | slice:0:25}}...</a></td>
+                    //<td>{{trans1.wallet_id}}</td> already comment
+                    <td>{{trans1.address_from}}</td>
+                    <td>{{trans1.address_to}}</td>
+                    <td>{{trans1.amount}}</td>
+                    <td>{{trans1.status}}</td>
+                  </tr>
+                 
+                </tbody>
+            </table>
+          </div>
+        </tab> -->
+        <!-- <tab heading="LTC">
+            <div class="table-responsive">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th>Transaction Id</th>
+                    // <th>Wallet Id</th>  already comment
+                    <th>From Address</th>
+                    <th>To Address</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let trans2 of ltctrans">
+                    <td><a target="_blank" href="https://live.blockcypher.com/ltc/tx/{{trans2.txid}}">{{trans2.txid | slice:0:25}}...</a></td>
+                    // <td>{{trans2.wallet_id}}</td>  already comment
+                    <td>{{trans2.address_from}}</td>
+                    <td>{{trans2.address_to}}</td>
+                    <td>{{trans2.amount}}</td>
+                    <td>{{trans2.status}}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              </div>
+        </tab> -->
+
+        <tab heading="CREDIT">
+          <div class="table-responsive">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th>Transaction Id</th>
+                  <th>Date</th>
+                  <th>Price</th>
+                  <th>OXY2 Tokens</th>
+
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let trans3 of bnktrans">
+                  <td>{{trans3.transaction_id}}</td>
+                  <td>{{trans3.createdAt}}</td>
+                  <td>{{trans3.price | currency}}</td>
+                  <td>{{trans3.vgw_tokens}}</td>
+                </tr>
+               
+              </tbody>
+            </table>
+            </div>
+      </tab>
+
+      </tabset>
+    </div>   
+  </div>
+</div>

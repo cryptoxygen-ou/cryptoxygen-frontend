@@ -1,0 +1,52 @@
+<button (click)="openModal(googleModal)" class="btn right_btn">Enable</button>
+
+
+
+<ng-template #googleModal>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+  </button>
+  <div class="modal-body">
+      <div class="mb-hdr"><h4>Enable Google Authentication</h4></div>
+      <div class="form-group qr-code" >
+        <img [src]="qrImage">
+      </div>
+
+      <form #f="ngForm" (ngSubmit)="verify(f)" >
+      <div class="form-group">
+        <input required ngModel minlength="2" name ="token"  #token ="ngModel" type="text" class="form-control" placeholder="Verify Token">
+        <p class="text-danger" *ngIf="token.touched && !token.valid">
+          <span *ngIf = "token.errors.required" >Token is required</span>
+          <span *ngIf = "token.errors.minlength" >Minimum {{token.errors.minlength.requiredLength}}  chracter is required</span>
+        </p>
+      </div>
+      <div class="form-group">
+        <!-- <label>Your Secret Key</label> -->
+        <input readonly [(ngModel)]="mykey" minlength="2" name ="key"  #key ="ngModel" type="text" class="form-control custom-input" placeholder="Verify Token">
+      </div>
+      <div class="form-group">
+          <div class="form-check">
+            <label class="form-check-label label-custom">
+
+              <input type="checkbox" class="form-check-input " ngModel name = "terms" #terms ="ngModel" required />
+
+
+              <p>Make sure you have saved your key</p>
+
+              <p class="text-danger" *ngIf="terms.touched && !terms.valid">
+                    <span *ngIf = "terms.errors.required" >Please check this checkbox</span>
+                  
+              </p>
+            </label>
+          </div>
+         
+                         
+      </div>      
+      <div class="form-group">
+          <button [disabled]="!f.valid" type="submit" class="btn btn red_btn update">Update</button>
+      </div>
+      </form>
+
+         
+    </div> 
+</ng-template> 

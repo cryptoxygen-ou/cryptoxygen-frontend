@@ -1,0 +1,18 @@
+
+.pricetimer ul.price_list {
+    display: block;
+    margin: 0 -5px;
+    position: relative;
+    width: auto;
+}
+.pricetimer ul.price_list li {
+    float: left;
+    padding: 0 5px;
+    position: relative;
+}
+.info_sec .pricetimer ul.price_list li a {
+	font-size: 26px;
+	height: 75px;
+	line-height: 30px;
+	width: 75px;
+}
